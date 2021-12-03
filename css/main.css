@@ -1,3 +1,9 @@
+:root {
+	--main-primary: #000;
+	--main-primary-dark: #000;
+	--main-secondary: #000;
+	--main-secondary-dark: #000;
+}
 body{		
 	font-family: 'Kaushan Script', cursive;
 	font-family: 'Lato', sans-serif;
@@ -9,7 +15,7 @@ main{
 }
 
 #info-title{
-	color: #E12A80;
+	color: var(--main-primary);
 	margin-top: -80px;
 	font-size: 5em;
 }
@@ -34,7 +40,7 @@ main{
 }
 
 a{
-	color: #FB009A;	
+	color: var(--main-primary);	
 }
 article{	
 	margin-top: 10px;	
@@ -66,7 +72,7 @@ article{
 	font-size: 3.5em;	
 }
 .color-verde{
-	color: #E12A80;
+	color: var(--main-primary);
 }
 .margen-derecha{
 	margin-right: 1em;
@@ -187,8 +193,8 @@ figure{
 	min-height: 200px;	
 	max-height: 600px;	
 	margin: 10px;
-	background-color: rgb(219, 216, 216);
-	background-color: #F5F3E9;
+	background-color: var(--main-primary);
+	background-color: var(--main-primary);
 	border-radius: 20px;
 	border-width: 200px;
 	padding: 10px;
@@ -280,13 +286,13 @@ figure img{
 	padding-top: 15px;
 	padding-bottom: 0px;
 	margin-left: -10px;		
-	background-color: rgb(219, 216, 216);	
-	background-color: #F5F3E9;		
+	background-color: var(--main-primary);	
+	background-color: var(--main-primary);		
 	border-radius: 20px;	
 	z-index: 0;
 }
 #btn-detalles{			
-	color: #FB009A;		
+	color: var(--main-primary);		
 	font-size: 2em;
 	position: fixed;		
 	bottom: 48px;	
@@ -305,7 +311,7 @@ span{
 }
 .accion-icono:active{
 	border-radius: 150px;
-	border: 15px solid #C3CBFF;
+	border: 15px solid var(--main-primary);
 	width: 50%;	
 	-webkit-user-drag: none;	
 	-moz-user-select: none; 
@@ -314,7 +320,7 @@ span{
    user-select: none; 
 }
 #beepc{			
-	color: #FB009A;		
+	color: var(--main-primary);		
 	font-size: 2em;
 	position: fixed;		
 	bottom: 2px ;	
@@ -353,7 +359,7 @@ span{
 	
 	figure:hover{		
 		z-index: 1;				
-		box-shadow: 2px 2px 4px #bbbab8, 10px 10px 10px rgb(141, 141, 141);							
+		box-shadow: 2px 2px 4px var(--main-primary), 10px 10px 10px var(--main-primary);							
 	}	
 
 	.div-figure{					
@@ -376,7 +382,7 @@ span{
 		margin-left: -10px;			
 		max-height: max-content;							
 		/*
-		box-shadow: 2px 2px 4px #bbbab8, 10px 10px 10px rgb(141, 141, 141);	*/
+		box-shadow: 2px 2px 4px var(--main-primary), 10px 10px 10px var(--main-primary);	*/
 		
 		border-radius: 20px;
 		z-index: 2;
@@ -389,7 +395,7 @@ span{
 @media screen and (max-width: 700px){	 
 
 	#btn-detalles{			
-		color: #FB009A;		
+		color: var(--main-primary);		
 		font-size: 2em;
 		position: fixed;		
 		bottom: 48px;	
@@ -404,7 +410,7 @@ span{
 	}		
 
 	#beepc{			
-		color: #FB009A;		
+		color: var(--main-primary);		
 		font-size: 2em;
 		position: fixed;		
 		bottom: 2px ;	
@@ -440,7 +446,7 @@ span{
 	}	
 	
 	figure:hover{			
-		box-shadow: 2px 2px 4px #bbbab8, 10px 10px 10px rgb(141, 141, 141);				
+		box-shadow: 2px 2px 4px var(--main-primary), 10px 10px 10px var(--main-primary);				
 	}
 
 	

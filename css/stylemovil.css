@@ -10,7 +10,7 @@
 header{
     width: 100%;
     height: 110px;
-    border-bottom: 1px solid #FFB8D4;
+    border-bottom: 1px solid var(--main-primary);
     position: fixed;
     z-index: 100;
     justify-content: center;
@@ -51,10 +51,11 @@ header{
 .container-logo-title img {    
     width: 100%;
     height: auto;  
-    max-width: 100px;  
+    max-width: 125px;  
 }
 
 .container-logo-title h1{
+    padding-top: 5px;
     font-weight: 300;
     margin-top: 16px;
     margin-left: 10px;
@@ -112,7 +113,7 @@ header{
     .menu ul  ,li:hover{
         text-decoration: none;
         border: 1px solid #eeeeee;    
-        border-top: 4px solid #E12A80;    
+        border-top: 4px solid #000;    
         
     }
     

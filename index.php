@@ -85,7 +85,7 @@
 					-->					
 					<div  class="container-logo-title">		
 						<div class="contenedor-img">
-							<img  id="zumbido" class="img-logo animate__animated animate__swing animate__normal" src="logo.png">
+							<img  id="zumbido" class="img-logo animate__animated animate__swing animate__normal" src="alterno.png">
 						</div>								
 						<h1 >Uni store</h1>
 						<h2 style="font-size: 0.6em; margin-top: 20px;">FS </h2>
@@ -94,10 +94,10 @@
 					<div id="menu-desplegable" class="container-menu">
 						<nav class="menu"></nav>
 							<ul  class=" menu-ul">
-							<a href = "index.html" >
-								<li href= "index.html" ><label class="fa fa-home" style="color: #E12A80" ></label></li>
+							<a href = "index.php" >
+								<li href= "index.php" ><label class="fa fa-home" style="color: #E12A80" ></label></li>
 							</a>
-							<a href = "index.html" >
+							<a href = "catalogo.php" >
 								<li  >CATALOGO</li>
 							</a>
 							<a href = "contactos.html" >
@@ -112,7 +112,7 @@
 				</div>
 			</header>	
 			<div class="info-container" >		
-				<img id="img-home" src="imagen-portada.gif" class="overflow-img animate__animated animate__fadeIn img-tam-mediano">							
+				<img id="img-home" src="alterno.png" class="overflow-img animate__animated animate__fadeIn img-tam-mediano">							
 				<h1 id="info-title" class=" fuente-tam color-verde animate__animated animate__fadeIn"> Catalogo</h1>		
 				<div id="div-index" class="animate__animated animate__flipInX">
 					<h2 class="fuente-lato" style="font-size: 1.5em; margin-top:-10px;" >Detalles que te hacen feliz</h2>
