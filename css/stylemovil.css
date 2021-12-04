@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+header{
+    width: 100%;
+    height: 110px;
+    border-bottom: 1px solid #FFB8D4;
+    position: fixed;
+    z-index: 100;
+    justify-content: center;
+    text-align: center;
+    background: white;    
+    top: 0;    
+    left: 0;        
+}
+.logo{   
+    cursor: pointer;
+}
+.container-header{         
+    justify-content: center;    
+    width: 100%;
+    max-width: 1220px;    
+    display: flex;
+    text-align: center;        
+    position: relative;
+    margin: auto;    
+    
+    /*margin-right: 0px;*/
+}
+.contenedor-img{
+    width: 100%;
+    height: auto;
+    min-width: max-content;
+    max-width: max-content;
+    
+}
+
+.container-logo-title{          
+    display: flex;
+    margin-top: 5px;    
+    margin-left: 20px;  
+    position: relative;    
+}
+
+.container-logo-title img {    
+    width: 100%;
+    height: auto;  
+    max-width: 100px;  
+}
+
+.container-logo-title h1{
+    font-weight: 300;
+    margin-top: 16px;
+    margin-left: 10px;
+}
+#label-menu{
+    padding: 0;
+}
+
+
+/*///////////////////////////SOLO PC//////////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@media screen and (min-width: 700px){	
+
+    .container-logo-title{      
+    padding-right: 200px;
+}
+    .container-menu-movil{        
+        display: none;     
+    }
+    
+.container-menu{
+    /*    display: flex;*/
+        margin-top: 20px;
+        margin-right:  10px;
+    }
+    
+    .menu{
+        position: absolute;
+        right: 10px;
+        margin-top: 20px;    
+    }
+    
+    .menu ,ul{     
+        display: flex;
+    }
+    
+    .menu ul ,li{        
+        list-style: none;
+        font-size: 12px;    
+        color: black;
+        padding: 20px 10px;
+        border: 1px solid transparent;
+        border-top: 4px solid transparent;
+        cursor: pointer;
+        transition: border 300ms;
+        position: relative;
+    }
+    
+    .menu ul li label,
+    .menu ul li Span{
+        color: #868686;
+    }
+    
+    .menu ul  ,li:hover{
+        text-decoration: none;
+        border: 1px solid #eeeeee;    
+        border-top: 4px solid #E12A80;    
+        
+    }
+    
+    .menu ul li ,span{
+        font-size: 14px;
+        position: relative;    
+    }
+    
+    .menu ul li ,label{
+        font-size: 25px;
+        position: relative;
+        top: -6px;
+    }
+    
+    
+    /*Submenu*/
+    
+    .submenu-ul{   
+        /*z-index: 1;         */
+        width: 300px;
+        position: absolute;    
+        left: 0;
+        flex-direction: column;
+        border: 1px solid #eeeeee;
+        background: white;
+        border-bottom: 1px solid #e7e5e5;
+        padding: 10px;
+    }
+    .submenu-ul :hover{               
+        border-bottom: 1px solid #eeeeee;    
+        border-top: 1px solid #eeeeee;    
+        /*border-left: none;
+        border-right: none;*/
+        
+    }
+    
+    /*
+    .menu ul li ul ,li{
+        padding: 10px 20px;
+        border-bottom: 1px solid #eeeeee;
+        font-weight: 100;
+        font-size: 14px;
+        position: relative;
+    }
+    */
+    .submenu-ul-li{
+        padding: 10px 20px;
+        border-bottom: 1px solid #eeeeee;
+        font-weight: 100;
+        font-size: 14px;
+        position: relative;
+    }
+    
+    .menu ul li ul ,li:hover{
+        background: #FAFAFA;    
+    }
+    
+    /*
+    .menu ul li ul li ul{
+        position: absolute;
+        left: 287px;
+        top: 0;
+    }*/
+    .submenu-web-ul-li-ul{
+        position: absolute;
+        left: 287px;    
+        top: 0px;
+    
+    }
+    
+}
+/*//////////////////////////////////MOVIL/////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+@media screen and (max-width: 700px){  
+
+@import url(https://use.fontawesome.com/releases/v5.0.6/css/all.css);
+@import url(https://fonts.googleapis.com/css?family=Oswald:400|Raleway:400,700,400italic,700italic);
+    
+  
+    header{
+        height: 90px;
+        margin-bottom: -50px;
+    }
+    .container-logo-title img {            
+        width: 100%;
+        height: auto;  
+        max-width: 80px;  
+    }
+    .container-menu{        
+        display: none;
+    }
+   
+    .container-header{
+
+        margin-left: -10.5px; 
+        padding: 0;  
+        text-align: center;      
+        justify-content: center;
+        width: 100%;        
+    }
+
+

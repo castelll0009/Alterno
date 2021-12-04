@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset= "utf-8">
+		<link rel="stylesheet" href="css/stylemovil.css">										
+		<meta name="viewport"  content="width=device-width initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/slider.css">
+    	<link
+	    rel="stylesheet"
+    	href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    	/>         
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">  
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/main.css">		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lato:wght@300;400;700&family=Zilla+Slab:wght@500&display=swap" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<title>UNI Store</title>
+	</head>
+	<body>
+		<main>
+			<i class="fa fa-th" id="btn-detalles"  onclick="desplegarItems()"></i>
+			<i class="fas fa-eye" id="beepc" onclick="vistaEscritorio()" ></i>			
+				
+			<header>							
+				<div class="container-header">
+					<!--
+					<nav id="main-movil" class="main-movil">
+						<div class="container-menu-movil">
+							<input id="responsive-menu" type="checkbox">
+							<label id="label-menu" for="responsive-menu"><span id="menu-icon"></span></label>
+							
+							<ul  >
+								<a href = "index.html" >
+									<li href= "index.html" ><label class="fa fa-home" style="color: #E12A80; margin-left: -40px;" ></label></li>
+								</a>
+								<a href = "index.html" >
+									<li  >CATALOGO</li>
+								</a>
+								<a href = "contactos.html" >
+									<li >CONTACTOS </li>
+								</a>
+								<a href = "">
+									<li >ACERCA DE </li>
+								</a>																
+								<li style="color: #E12A80; font-weight: bold;">INICIAR SESION</li>
+							</ul>
+				 
+				   
+							<ul id="social-media">
+								<li>
+									<a href="">
+										<i class="fab fa-facebook"></i>                        
+									</a>
+								</li>
+								<li>
+									<a href="index-slider.html">
+										<i class="fab fa-whatsapp"></i>                        
+									</a>
+								</li>
+								<li>
+									<a href=""></a>
+										<i class="fab fa-twitter"></i>                        
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<i class="fab fa-linkedin"></i>
+									  
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<i class="fab fa-instagram"></i>
+									
+									</a>
+								</li>
+							</ul>
+						</div>
+					</nav>	
+					-->					
+					<div  class="container-logo-title">		
+						<div class="contenedor-img">
+							<img  id="zumbido" class="img-logo animate__animated animate__swing animate__normal" src="logo.png">
+						</div>								
+						<h1 >Uni store</h1>
+						<h2 style="font-size: 0.6em; margin-top: 20px;">FS </h2>
+					</div>
+	
+					<div id="menu-desplegable" class="container-menu">
+						<nav class="menu"></nav>
+							<ul  class=" menu-ul">
+							<a href = "index.html" >
+								<li href= "index.html" ><label class="fa fa-home" style="color: #E12A80" ></label></li>
+							</a>
+							<a href = "index.html" >
+								<li  >CATALOGO</li>
+							</a>
+							<a href = "contactos.html" >
+								<li >CONTACTOS </li>
+							</a>
+							<a href = "" >
+								<li >ACERCA DE </li>
+							</a>																
+							<li style="color: #E12A80; font-weight: bold;">INICIAR SESION</li>
+						</ul>
+					</div>					
+				</div>
+			</header>	
+			<div class="info-container" >		
+				<img id="img-home" src="imagen-portada.gif" class="overflow-img animate__animated animate__fadeIn img-tam-mediano">							
+				<h1 id="info-title" class=" fuente-tam color-verde animate__animated animate__fadeIn"> Catalogo</h1>		
+				<div id="div-index" class="animate__animated animate__flipInX">
+					<h2 class="fuente-lato" style="font-size: 1.5em; margin-top:-10px;" >Detalles que te hacen feliz</h2>
+					<p>Si buscas alegrarle el dia a alguien, o simplemente ganarse su corazòn estas en el sition indicado.</p>				
+				</div>				
+			</div>
+
+			<div class="cards-container" >
+				<figure class="figure-container">
+					<h1 class="entrar-detalles titulo-producto">Anchetas</h1>	
+															
+					<!-- contenedor de  los items del menu-->
+					<div class="div-figure" >							
+						<img class="entrar-detalles accion-icono" src="imgs/anchetas.png" >
+						<p class="sona0 " >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt 
+								
+								<span class=" puntos0  puntos2" style="color:rgb(126, 126, 126)">...Leer Más</span>	
+								<span  class="text0" id="text2">													
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.								
+								quis nostrud exercitation ullamco laboris nisi ut.
+								<span style="color:rgb(163, 161, 161)"><br> <br>Leer Menos</span></p>							   															  					   															
+					</div>
+					<!-- Swiper contenedor totoal, submenu , detalles-->
+					<div class="contenedor-swiper-tarjetas">					
+						 <div class="contenedor-todo-swiper">						 	
+							<div class="swiper-container mySwiper">
+							  <div class="swiper-wrapper">
+
+								<div class="swiper-slide">
+									<h5>Dulces $50,000</h5>
+									<img src="imgs/anchetas-dulces.jpg" >	
+								</div>
+								<div class="swiper-slide">
+									<h5>Dulces y licores $60,000</h5>
+									<img src="imgs/anchetas_dulces_licor.png" >	
+								</div>
+								<div class="swiper-slide">
+									<h5>Saludable $40,000</h5>
+									<img src="imgs/anchetas_saludables.png" >	
+								</div> 
+							  </div>
+
+							  <div class="swiper-button-next"></div>
+							  <div class="swiper-button-prev"></div>
+							  <div class="swiper-pagination"></div>
+							</div>										
+						</div>		
+						<!-- informacion desplegable, tarjetas de inforamcion-->
+						<div class="contenedor-tarjetas-info">							
+								<div class="tarjeta-info about">
+									<h4>Detalles</h4> 
+									<p class="p-about">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+									consequat. Duis, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,							
+									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea LIMITE.								
+									</p>
+								</div>
+								<div class="tarjeta-info contenido">
+									<h4>Contenido</h4> 										
+									<img src="imgs/anchetas-contenido.png" >				
+									<h6>Personalizable</h6>	
+									<div class="contenido-personalizable">										
+										<h7>Tipo de ancheta:</h7>
+										<select name="select" class="variantes-producto"   >
+											<option  value="50000">dulce</option>
+											<option  value="60000">dulce y licor</option>
+											<option  value="40000">saludable</option>
+										</select>	
+										  <h7>Descripción:</h7>										 
+										  <textarea   type="descripcion" name="descripcion" rows="3" cols="10"class="descripcion-productos" name="descripcion"  placeholder="Escribe aquí tu descripción.."></textarea>									 										  
+									</div>
+								</div>
+								<div class="tarjeta-info orden">
+									<h4 class="h4-orden">Orden</h4> 
+									<div class="cantidad-unidades">	
+										<button class="btn-comprar">comprar</button>	
+										<span class="span-cantidad">
+											<button  class="botones-unidades disminuir-productos" >-</button>
+											<input type="text" class="cantidad-producto" value="1">
+											<button  class="botones-unidades aumentar-productos ">+</button>																															
+										</span>																				
+									</div>						
+								</div>
+						</div>
+					</div>										
+				</figure>	
+
+				<figure class="figure-container">
+					<h1 class="entrar-detalles titulo-producto">Meriendas</h1>
+					<div class="div-figure" >
+							<img class="entrar-detalles accion-icono"  src="imgs/Meriendas.png" >						
+						<p class="sona0">aqui tenemos postres Yogurt y ensaladas de frutas
+							<span class="puntos0  puntos2" style="color:rgb(126, 126, 126)">...Leer Más</span>	
+							<span  class="text0" id="text2">													
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							
+							<span style="color:rgb(163, 161, 161)"><br> <br>Leer Menos</span></p>																									
+					</div>
+
+					<!-- Swiper contenedor totoal, submenu , detalles-->
+					<div class="contenedor-swiper-tarjetas">					
+						<div class="contenedor-todo-swiper">						 	
+						   <div class="swiper-container mySwiper">
+							 <div class="swiper-wrapper">
+
+							   <div class="swiper-slide">
+								   <h5>Postres $40,000</h5>
+								   <img src="imgs/postres.jpg" >	
+							   </div>
+							   <div class="swiper-slide">
+								   <h5>Cafe $40,000</h5>
+								   <img src="imgs/cafe.jpg" >	
+							   </div>
+							   <div class="swiper-slide">
+								   <h5>Yogurt $40,000</h5>
+								   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBVOX9PAU-3ri7eDwGo75eE6r2jTjDq42hiJZ5tNLQnU888kvLnvDAWgmVnAfNy3dLGKg&usqp=CAU" >	
+							   </div> 
+							   <div class="swiper-slide">
+								<h5>Ensalada de Frutas $40,000</h5>
+								<img src="https://image.freepik.com/foto-gratis/ensalada-frutas-taza-llevar-aislado-blanco_185193-17073.jpg" >	
+								</div> 
+								<div class="swiper-slide">
+									<h5>Sandwitch $40,000</h5>
+									<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBVOX9PAU-3ri7eDwGo75eE6r2jTjDq42hiJZ5tNLQnU888kvLnvDAWgmVnAfNy3dLGKg&usqp=CAU" >	
+								</div> 
+								<div class="swiper-slide">
+									<h5>Colita Cubana $40,000</h5>
+									<img src="https://image.freepik.com/vector-gratis/cafe-realista-vaso-papel-desechable-tapa_208581-527.jpg" >	
+								</div> 
+							 </div>
+
+							 <div class="swiper-button-next"></div>
+							 <div class="swiper-button-prev"></div>
+							 <div class="swiper-pagination"></div>
+						   </div>										
+					   </div>		
+					   <!-- informacion desplegable, tarjetas de inforamcion-->
+					   <div class="contenedor-tarjetas-info">							
+							   <div class="tarjeta-info about">
+								   <h4>Detalles</h4> 
+								   <p class="p-about">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								   consequat. Duis, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,							
+								   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea LIMITE.								
+								   </p>
+							   </div>
+							   <div class="tarjeta-info contenido">
+								   <h4>Contenido</h4> 						
+								   <h6>Personalizable</h6>	
+									<div class="contenido-personalizable">										
+										<h7>Tipo de ancheta:</h7>
+										<select name="select" class="variantes-producto"  >
+											<option value="1">postres</option>
+											<option value="2">cafe</option>
+											<option value="3">yogurt</option>
+											<option value="4">cubanos</option>
+										</select>	
+										  <h7>Descripción:</h7>										 
+										  <textarea   type="descripcion" name="descripcion" rows="3" cols="10" class="descripcion-productos" name="descripcion"  placeholder="Escribe aquí tu descripción.."></textarea>									 										  
+									</div>
+							   </div>
+							   <div class="tarjeta-info orden">
+								   <h4 class="h4-orden">Orden</h4> 
+								   <div class="cantidad-unidades">	
+									<button class="btn-comprar">comprar</button>	
+									<span class="span-cantidad">
+										<button  class="botones-unidades disminuir-productos" >-</button>
+										<input type="text" class="cantidad-producto"  value="1">
+										<button  class="botones-unidades aumentar-productos ">+</button>																															
+									</span>																				
+								</div>							
+							   </div>
+					   </div>
+				   </div>	
+				</figure>	
+				
+				<figure class="figure-container">
+					<h1 class="entrar-detalles titulo-producto">Desayunos sorpresa</h1>
+					<div   class="sona0  div-figure"  >					
+						<img class="entrar-detalles accion-icono" src="imgs/desayuno.png" alt="">					
+					<p>los desayunos sorpresa mas ricos y especiales estan aqui para
+						<span class="puntos0 " style="color:rgb(126, 126, 126)">...Leer Más</span>	
+						<span class="text0" id="text3">	
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					
+						<span style="color:rgb(163, 161, 161)"><br> <br>Leer Menos</span></p>
+					</div>			
+					
+					
+					<!-- Swiper contenedor totoal, submenu , detalles-->
+					<div class="contenedor-swiper-tarjetas">					
+						<div class="contenedor-todo-swiper">						 	
+						   <div class="swiper-container mySwiper">
+							 <div class="swiper-wrapper">
+
+							   <div class="swiper-slide">
+								   <h5>Desayuno Mixto $40,000</h5>
+								   <img src="imgs/desayunos _dulce_sal.jpg" >	
+							   </div>
+							   <div class="swiper-slide">
+								   <h5>Sandwitch y licores $40,000</h5>
+								   <img src="imgs/ducles-licores.jpg" >	
+							   </div>
+							   <div class="swiper-slide">
+								   <h5>Huevos Rancheros $40,000</h5>
+								   <img src="imgs/anchetas_saludables.png" >	
+							   </div> 
+							   <div class="swiper-slide">
+								<h5>Fruta, milo o jugo $40,000</h5>
+								<img src="imgs/anchetas_saludables.png" >	
+								</div> 
+								<div class="swiper-slide">
+									<h5>Huevos Rancheros $40,000</h5>
+									<img src="imgs/anchetas_saludables.png" >	
+								</div> 
+								<div class="swiper-slide">
+									<h5>Huevos Rancheros $40,000</h5>
+									<img src="imgs/anchetas_saludables.png" >	
+								</div> 
+							 </div>
+
+							 <div class="swiper-button-next"></div>
+							 <div class="swiper-button-prev"></div>
+							 <div class="swiper-pagination"></div>
+						   </div>										
+					   </div>		
+					   <!-- informacion desplegable, tarjetas de inforamcion-->
+					   <div class="contenedor-tarjetas-info">							
+							   <div class="tarjeta-info about">
+								   <h4>Detalles</h4> 
+								   <p class="p-about">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								   consequat. Duis, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,							
+								   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea LIMITE.								
+								   </p>
+							   </div>
+							   <div class="tarjeta-info contenido">
+								   <h4>Contenido</h4> 						
+								   <h6>Personalizable</h6>	
+									<div class="contenido-personalizable">										
+										<h7>Tipo de ancheta:</h7>
+										<select name="select" class="variantes-producto"  >
+											<option value="10000">desayuno1</option>
+											<option value="2000">desayuno2</option>
+											<option value="3000">desayuno3</option>
+											<option value="40000">desayuno4</option>
+											<option value="50000">desayuno5</option>
+										</select>	
+										  <h7>Descripción:</h7>										 
+										  <textarea   type="descripcion" name="descripcion" rows="3" cols="10" class="descripcion-productos" name="descripcion"  placeholder="Escribe aquí tu descripción.."></textarea>									 										  
+									</div>
+							   </div>
+							   <div class="tarjeta-info orden">
+								   <h4 class="h4-orden">Orden</h4> 
+								   <div class="cantidad-unidades">	
+									<button class="btn-comprar">comprar</button>	
+									<span class="span-cantidad">
+										<button  class="botones-unidades disminuir-productos" >-</button>
+										<input type="text" class="cantidad-producto" value="1">
+										<button  class="botones-unidades aumentar-productos">+</button>																															
+									</span>																				
+								</div>								
+							   </div>
+					   </div>
+				   </div>	
+				</figure>	
+
+				<figure class="figure-container">
+					<h1 class="entrar-detalles titulo-producto">Arreglos florales</h1>
+					<div class="sona0 div-figure" >
+						<img class="entrar-detalles accion-icono" src="imgs/arreglo-floral.png" >					
+					<p>1.<br>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt u
+						<span class="puntos0 puntos4" style="color:rgb(126, 126, 126)">...Leer Más</span>	
+						<span class="text0"  id="text4">	
+						tenemos arreglos florales de todo tipo, para bodas, entierros, jajaajsadasd web.								
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,																
+					
+						<span style="color:rgb(163, 161, 161)"><br> <br>Leer Menos</span></p>
+					</div>		
+						
+					<!-- Swiper contenedor totoal, submenu , detalles-->
+					<div class="contenedor-swiper-tarjetas">					
+						<div class="contenedor-todo-swiper">						 	
+						   <div class="swiper-container mySwiper">
+							 <div class="swiper-wrapper">
+
+							   <div class="swiper-slide">
+								   <h5>Rosas $40,000</h5>
+								   <img src="imgs/anchetas-dulces.jpg" >	
+							   </div>
+							   <div class="swiper-slide">
+								   <h5>Rosas y frutas  $40,000</h5>
+								   <img src="imgs/ducles-licores.jpg" >	
+							   </div>
+							   <div class="swiper-slide">
+								   <h5>Rosas y chocolates $40,000</h5>
+								   <img src="imgs/anchetas_saludables.png" >	
+							   </div> 
+							 </div>
+
+							 <div class="swiper-button-next"></div>
+							 <div class="swiper-button-prev"></div>
+							 <div class="swiper-pagination"></div>
+						   </div>										
+					   </div>		
+					   <!-- informacion desplegable, tarjetas de inforamcion-->
+					   <div class="contenedor-tarjetas-info">							
+							   <div class="tarjeta-info about">
+								   <h4>Detalles</h4> 
+								   <p class="p-about">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								   consequat. Duis, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,							
+								   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea LIMITE.								
+								   </p>
+							   </div>
+							   <div class="tarjeta-info contenido">
+								   <h4>Contenido</h4> 						
+								   <h6>Personalizable</h6>	
+								   <div class="contenido-personalizable">										
+									   <h7>Arreglos florales:</h7>
+									   <select name="select" class="variantes-producto"  >
+										   <option value="1">arreglo1</option>
+										   <option value="2">arreglo2</option>
+										   <option value="3">arreglo3</option>
+									   </select>	
+										 <h7>Descripción:</h7>										 
+										 <textarea   type="descripcion" name="descripcion" rows="3" cols="10" class="descripcion-productos" name="descripcion"  placeholder="Escribe aquí tu descripción.."></textarea>									 										  
+								   </div>
+							   </div>
+							   <div class="tarjeta-info orden">
+								   <h4 class="h4-orden">Orden</h4> 
+								   <div class="cantidad-unidades">	
+									<button class="btn-comprar">comprar</button>	
+									<span class="span-cantidad">
+										<button  class="botones-unidades disminuir-productos" >-</button>
+										<input type="text" class="cantidad-producto" value="1">
+										<button  class="botones-unidades aumentar-productos ">+</button>																															
+									</span>																				
+								</div>							
+							   </div>
+					   </div>
+				   </div>	
+					
+				</figure>	
+
+
+				<figure class="figure-container">
+					<h1 class="entrar-detalles titulo-producto">Bandejas</h1>	
+					<div class="sona0 div-figure" >
+						<img class="entrar-detalles accion-icono" src="imgs/bandejas.png" >					
+					<p>1.<br>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt u
+						<span class="puntos0" style="color:rgb(126, 126, 126)">...Leer Más</span>	
+						<span class="text0"  id="text5">	
+				
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					
+						<span style="color:rgb(163, 161, 161)"><br> <br>Leer Menos</span></p>
+					</div>		
+					
+						
+					<!-- Swiper contenedor totoal, submenu , detalles-->
+					<div class="contenedor-swiper-tarjetas">					
+						<div class="contenedor-todo-swiper">						 	
+						   <div class="swiper-container mySwiper">
+							 <div class="swiper-wrapper">
+
+							   <div class="swiper-slide">
+								   <h5>Saludables (solo frutas) $40,000</h5>
+								   <img src="imgs/anchetas-dulces.jpg" >	
+							   </div>
+							   <div class="swiper-slide">
+								   <h5>Candy (solo dulces)$40,000</h5>
+								   <img src="imgs/ducles-licores.jpg" >	
+							   </div>
+							   <div class="swiper-slide">
+								   <h5>Mixta (salado y dulce) $40,000</h5>
+								   <img src="imgs/anchetas_saludables.png" >	
+							   </div> 
+							   <div class="swiper-slide">
+								<h5>Desayuno $40,000</h5>
+								<img src="imgs/anchetas_saludables.png" >	
+							</div> 
+							 </div>
+
+							 <div class="swiper-button-next"></div>
+							 <div class="swiper-button-prev"></div>
+							 <div class="swiper-pagination" ></div>
+						   </div>										
+					   </div>		
+					   <!-- informacion desplegable, tarjetas de inforamcion-->
+					   <div class="contenedor-tarjetas-info">							
+							   <div class="tarjeta-info about">
+								   <h4>Detalles</h4> 
+								   <p class="p-about">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								   consequat. Duis, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,							
+								   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea LIMITE.								
+								   </p>
+							   </div>
+							   <div class="tarjeta-info contenido">
+								   <h4>Contenido</h4> 						
+								   <h6>Personalizable</h6>	
+									<div class="contenido-personalizable">										
+										<h7>Tipo Bandeja:</h7>
+										<select name="select" class="variantes-producto"  >
+											<option value="1">bandeja1</option>
+											<option value="2">bandeja2</option>
+											<option value="3">bandeja3</option>
+										</select>	
+										  <h7>Descripción:</h7>	
+										  <textarea   type="descripcion" name="descripcion" rows="3" cols="10" class="descripcion-productos" name="descripcion"  placeholder="Escribe aquí tu descripción.."></textarea>									 										  
+									</div>
+							   </div>
+							   <div class="tarjeta-info orden">
+								   <h4 class="h4-orden">Orden</h4> 								 
+								   <div class="cantidad-unidades">	
+									<button class="btn-comprar">comprar</button>	
+									<span class="span-cantidad">
+										<button  class="botones-unidades disminuir-productos" >-</button>
+										<input type="text" class="cantidad-producto" value="1">
+										<button  class="botones-unidades aumentar-productos ">+</button>																															
+									</span>									
+										
+								   </div>					
+							   </div>
+					   </div>
+				   </div>	
+
+				</figure>	
+				
+	
+			</div>	
+						
+				
+			<nav class=" nav-barra-inferior animate__animated animate__fadeIn">
+				<a href = "index.html" class="margen-derecha">Catalogo</a>
+				<a href = "contactos.html" class="margen-derecha" class="margen-derecha">Contactos</a>				
+				<a href = "https://www.facebook.com/profile.php?id=100009055449064" class="margen-derecha">Redes Sociales</a>	
+				<a href = "https://www.instagram.com/castelll0009">Instragram</a>		
+				<a style="background-color: #C907C0; border-radius: 5px; padding-left: 8px; padding-right: 8px; color: beige;"  href = "https://drive.google.com/file/d/1NDsNjMkE4laC038JCCZmbtsV9ulMIvaF/view?usp=sharing">CV-Developer</a>	
+			</nav>				
+			
+		</main>	  
+		<audio id="buzz">	  
+	  		<source src="buzz.mp3" type="audio/mpeg">
+	  		Your browser does not support the audio element.
+		</audio>
+
+		<script src="js/menu.js"></script>	
+		<script src="js/buttom_menu.js"></script>	
+		<script src="js/jquery.js"></script>  		
+		 <!-- Swiper JS -->
+	    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	    <!-- Initialize Swiper -->
+	    <script src="js/slider.js"></script> 		
+	</body>
+</html>
