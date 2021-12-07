@@ -109,28 +109,17 @@ $(document).ready(function() {
     const postData = {
       name: $('#name').val(),
       price: $('#price').val(),
-      description: $('#description').val()
+      description: $('#description').val(),
+      id: $('#productId').val()
     };
-    //const url = edit === false ? 'backend/product-add.php' : 'backend/product-edit.php';
-    url = 'backend/product-add.php';
+    console.log(postData.id);
+    const url = edit === false ? 'backend/product-add.php' : 'backend/product-edit.php';
+    //url = 'backend/product-add.php';
     console.log(postData, url);
     $.post(url, postData, (response) => {
-      //console.log(response);
+      console.log(response);
       $('#product-form').trigger('reset');
       fetchProducts();
-    });
-  });
-
-  // Get a Single Product by Id 
-  $(document).on('click', '.product-item', function() {
-    let element = $(this)[0].parentElement.parentElement;
-    let id = $(element).attr('productId');
-    $.post('backend/product-single.php', {id}, function(response) {
-      const product = JSON.parse(response);
-      $('#name').val(product.name);
-      $('#price').val(product.id);
-      $('#description').val(product.description);
-      edit = true;
     });
   });
 
@@ -140,9 +129,43 @@ $(document).ready(function() {
       let element = $(this)[0].parentElement.parentElement;
       let id = $(element).attr('productId');
       $.post('backend/product-delete.php', {id}, function(response) {
-        console.log(response);
+        //console.log(response);
         fetchProducts();
       });
     }
   });
+
+  // Editar los Productos mostrados en Formulario
+  $(document).on('click', '.product-item', function() {
+    let element = $(this)[0].parentElement.parentElement;
+    let id = $(element).attr("productId");
+      //console.log(id);
+      //primero obtenemos los datos del elemtno clickeado
+      $.post('backend/product-single.php', {id}, function(response){
+        edit = true;
+        //console.log(response);
+        const product = JSON.parse(response);
+        //console.log(product);
+        $('#name').val(product.nombre);
+        $('#price').val(product.precio);
+        $('#description').val(product.descripcion);
+        $('#productId').val(product.id);
+     })
+  });
+
+  /*
+  // Get a Single Product by Id 
+  $(document).on('click', '.product-item', function() {
+    let element = $(this)[0].parentElement.parentElement;
+    let id = $(element).attr('productId');
+    $.post('backend/product-single.php', {id}, function(response) {
+      const product = JSON.parse(response);
+      $('#name').val(product.nombre);
+      $('#price').val(product.precio);
+      $('#description').val(product.descripcion);
+      edit = true;
+    });
+  });
+  */
+
 });
