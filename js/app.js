@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   // Testing Jquery
   console.log('jquery is working!');
-  //fetchTasks();
+  fetchTasks();
   //$('#task-result').hide();
 
   // search key type event
@@ -33,6 +33,41 @@ $(document).ready(function() {
       })
     }
   });
+
+  // Fetching Tasks
+  function fetchTasks() {
+    $.ajax({
+      url: 'backend/tasks-list.php',
+      type: 'GET',
+      success: function(response) {
+        const tasks = JSON.parse(response);
+        let template = '';
+        tasks.forEach(task => {
+          template += `
+                  <tr taskId="${task.id}">
+                  <td>${task.id}</td>
+                  <td>
+                  <a href="#" class="task-item">
+                    ${task.nombre} 
+                  </a>
+                  </td>                   
+                  <td>${task.precio}</td>
+                  <td>${task.descripcion}</td>                   
+                  <td>${task.receta}</td>                   
+                  <td>${task.propiedades}</td>                   
+                  <td>${task.usos}</td>
+                  <td>
+                    <button class="task-delete btn btn-danger">
+                     Delete 
+                    </button>
+                  </td>
+                  </tr>
+                `
+        });
+        $('#tasks').html(template);
+      }
+    });
+  }
 
   /*
   $('#task-form').submit(e => {
