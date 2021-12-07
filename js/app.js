@@ -4,145 +4,145 @@ $(document).ready(function() {
 
   // Testing Jquery
   console.log('jquery is working!');
-  fetchTasks();
-  $('#task-result').hide();
+  fetchProducts();
+  $('#product-result').hide();
 
   // search key type event
   $('#search').keyup(function() {
     if($('#search').val()) {
       let search = $('#search').val();
       $.ajax({
-        url: 'backend/task-search.php',        
+        url: 'backend/product-search.php',        
         type: 'POST',
         data: {search}, //podemos enviar string , objetos
-        success: function (response) {
+        /*success: function (response) {
           console.log(response);        
           if(!response.error) {
-            let tasks = JSON.parse(response);
+            let products = JSON.parse(response);
             let template = '';
-            tasks.forEach(task => {
+            products.forEach(product => {
               template += `
-                     <li><a href="#" class="task-item">${task.nombre}</a></li>
+                     <li><a href="#" class="product-item">${product.nombre}</a></li>
                     ` 
             });
-            $('#task-result').show();
+            $('#product-result').show();
             $('#container').html(template);
           }
+        }*/
+        success: function(response) {
+          const products = JSON.parse(response);
+          let template = '';
+          products.forEach(product => {
+            template += `
+                    <tr productId="${product.id}">
+                      <td>${product.id}</td>
+                      <td>
+                      <a href="#" class="product-item">
+                        ${product.nombre} 
+                      </a>
+                      </td>                   
+                      <td>${product.precio}</td>
+                      <td>${product.descripcion}</td>                   
+                      <td>${product.receta}</td>                   
+                      <td>${product.propiedades}</td>                   
+                      <td>${product.usos}</td>
+                      <td>
+                        <a class="btn btn-secondary">
+                          <i class="fas fa-cog"></i>
+                        </a>
+                        <a class="btn btn-danger" style="color:#fff;">
+                          <i class="far fa-trash-alt"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  `
+          });
+          $('#products').html(template);
         }
       })
+    } 
+    else {
+      fetchProducts();
     }
   });
 
-  // Fetching Tasks
-  function fetchTasks() {
+  // Fetching Products
+  function fetchProducts() {
     $.ajax({
-      url: 'backend/tasks-list.php',
+      url: 'backend/products-list.php',
       type: 'GET',
       success: function(response) {
-        const tasks = JSON.parse(response);
+        const products = JSON.parse(response);
         let template = '';
-        tasks.forEach(task => {
+        products.forEach(product => {
           template += `
-                  <tr taskId="${task.id}">
-                  <td>${task.id}</td>
-                  <td>
-                  <a href="#" class="task-item">
-                    ${task.nombre} 
-                  </a>
-                  </td>                   
-                  <td>${task.precio}</td>
-                  <td>${task.descripcion}</td>                   
-                  <td>${task.receta}</td>                   
-                  <td>${task.propiedades}</td>                   
-                  <td>${task.usos}</td>
-                  <td>
-                    <a class="btn btn-secondary">
-                      <i class="fas fa-cog"></i>
+                  <tr productId="${product.id}">
+                    <td>${product.id}</td>
+                    <td>
+                    <a href="#" class="product-item">
+                      ${product.nombre} 
                     </a>
-                    <a class="btn btn-danger" style="color:#fff;">
-                      <i class="far fa-trash-alt"></i>
-                    </a>
-                  </td>
+                    </td>                   
+                    <td>${product.precio}</td>
+                    <td>${product.descripcion}</td>                   
+                    <td>${product.receta}</td>                   
+                    <td>${product.propiedades}</td>                   
+                    <td>${product.usos}</td>
+                    <td>
+                      <a class="btn btn-secondary">
+                        <i class="fas fa-cog"></i>
+                      </a>
+                      <a class="product-delete btn btn-danger" style="color:#fff;">
+                        <i class="far fa-trash-alt"></i>
+                      </a>
+                    </td>
                   </tr>
                 `
         });
-        $('#tasks').html(template);
+        $('#products').html(template);
       }
     });
   }
   
-  $('#task-form').submit(e => {
+  $('#product-form').submit(e => {
     e.preventDefault();
     const postData = {
       name: $('#name').val(),
       price: $('#price').val(),
-      description: $('#description').val(),
-      id: $('#taskId').val() //I think isn't neccesary
+      description: $('#description').val()
     };
-    const url = edit === false ? 'backend/product-add.php' : 'backend/product-edit.php';
+    //const url = edit === false ? 'backend/product-add.php' : 'backend/product-edit.php';
+    url = 'backend/product-add.php';
     console.log(postData, url);
     $.post(url, postData, (response) => {
-      console.log(response);
-      $('#task-form').trigger('reset');
-      fetchTasks();
+      //console.log(response);
+      $('#product-form').trigger('reset');
+      fetchProducts();
     });
   });
 
-  /*
-  // Fetching Tasks
-  function fetchTasks() {
-    $.ajax({
-      url: 'tasks-list.php',
-      type: 'GET',
-      success: function(response) {
-        const tasks = JSON.parse(response);
-        let template = '';
-        tasks.forEach(task => {
-          template += `
-                  <tr taskId="${task.id}">
-                  <td>${task.id}</td>
-                  <td>
-                  <a href="#" class="task-item">
-                    ${task.name} 
-                  </a>
-                  </td>
-                  <td>${task.description}</td>
-                  <td>
-                    <button class="task-delete btn btn-danger">
-                     Delete 
-                    </button>
-                  </td>
-                  </tr>
-                `
-        });
-        $('#tasks').html(template);
-      }
-    });
-  }
-
-  // Get a Single Task by Id 
-  $(document).on('click', '.task-item', (e) => {
-    const element = $(this)[0].activeElement.parentElement.parentElement;
-    const id = $(element).attr('taskId');
-    $.post('task-single.php', {id}, (response) => {
-      const task = JSON.parse(response);
-      $('#name').val(task.name);
-      $('#description').val(task.description);
-      $('#taskId').val(task.id);
+  // Get a Single Product by Id 
+  $(document).on('click', '.product-item', function() {
+    let element = $(this)[0].parentElement.parentElement;
+    let id = $(element).attr('productId');
+    $.post('backend/product-single.php', {id}, function(response) {
+      const product = JSON.parse(response);
+      $('#name').val(product.name);
+      $('#price').val(product.id);
+      $('#description').val(product.description);
       edit = true;
     });
-    e.preventDefault();
   });
 
-  // Delete a Single Task
-  $(document).on('click', '.task-delete', (e) => {
+  // Delete a Single Product
+  $(document).on('click', '.product-delete', function() {
     if(confirm('Are you sure you want to delete it?')) {
-      const element = $(this)[0].activeElement.parentElement.parentElement;
-      const id = $(element).attr('taskId');
-      $.post('task-delete.php', {id}, (response) => {
-        fetchTasks();
+      let element = $(this)[0].parentElement.parentElement;
+      let id = $(element).attr('productId');
+      $.post('backend/product-delete.php', {id}, function(response) {
+        console.log(response);
+        fetchProducts();
       });
     }
   });
-  */
 });

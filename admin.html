@@ -32,8 +32,8 @@
         <div class="col-md-5">
           <div class="card">
             <div class="card-body">
-              <!-- FORM TO ADD TASKS -->
-              <form id="task-form">
+              <!-- FORM TO ADD PRODUCTS -->
+              <form id="product-form">
                 <div class="form-group">
                   <h5>New product</h5>
                 </div>
@@ -45,8 +45,7 @@
                 </div>
                 <div class="form-group">
                   <textarea id="description" cols="30" rows="10" class="form-control" placeholder="Description" required="required"></textarea>
-                </div>
-                <input type="hidden" id="taskId"><!-- I think don't necesary-->
+                  </div>
                 <button type="submit" class="btn btn-primary btn-block text-center">
                   Save
                 </button>
@@ -58,7 +57,7 @@
         <!-- TABLE  -->
         <div class="col-md-7">
           <!-- RESULTADOS DE PRUEBA -->
-          <div class="card my-4" id="task-result">
+          <div class="card my-4" id="product-result">
             <div class="card-body">
               <!-- SEARCH -->
               <ul id="container"></ul>
@@ -79,7 +78,7 @@
                 <td>Action</td>  
               </tr>
             </thead>
-            <tbody id="tasks"></tbody>
+            <tbody id="products"></tbody>
           </table>
         </div>
       </div>
