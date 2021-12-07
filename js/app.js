@@ -5,7 +5,7 @@ $(document).ready(function() {
   // Testing Jquery
   console.log('jquery is working!');
   fetchTasks();
-  //$('#task-result').hide();
+  $('#task-result').hide();
 
   // search key type event
   $('#search').keyup(function() {
@@ -28,8 +28,7 @@ $(document).ready(function() {
             $('#task-result').show();
             $('#container').html(template);
           }
-          
-        } 
+        }
       })
     }
   });
@@ -57,9 +56,12 @@ $(document).ready(function() {
                   <td>${task.propiedades}</td>                   
                   <td>${task.usos}</td>
                   <td>
-                    <button class="task-delete btn btn-danger">
-                     Delete 
-                    </button>
+                    <a class="btn btn-secondary">
+                      <i class="fas fa-cog"></i>
+                    </a>
+                    <a class="btn btn-danger" style="color:#fff;">
+                      <i class="far fa-trash-alt"></i>
+                    </a>
                   </td>
                   </tr>
                 `
@@ -68,16 +70,16 @@ $(document).ready(function() {
       }
     });
   }
-
-  /*
+  
   $('#task-form').submit(e => {
     e.preventDefault();
     const postData = {
       name: $('#name').val(),
+      price: $('#price').val(),
       description: $('#description').val(),
-      id: $('#taskId').val()
+      id: $('#taskId').val() //I think isn't neccesary
     };
-    const url = edit === false ? 'task-add.php' : 'task-edit.php';
+    const url = edit === false ? 'backend/product-add.php' : 'backend/product-edit.php';
     console.log(postData, url);
     $.post(url, postData, (response) => {
       console.log(response);
@@ -86,6 +88,7 @@ $(document).ready(function() {
     });
   });
 
+  /*
   // Fetching Tasks
   function fetchTasks() {
     $.ajax({
