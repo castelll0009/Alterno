@@ -286,8 +286,8 @@ figure img{
 	padding-top: 15px;
 	padding-bottom: 0px;
 	margin-left: -10px;		
-	background-color: var(--main-primary);	
-	background-color: var(--main-primary);		
+	background-color: #fff;	
+	background-color: #fff;
 	border-radius: 20px;	
 	z-index: 0;
 }
