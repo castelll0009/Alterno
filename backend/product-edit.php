@@ -7,11 +7,10 @@
         $price = $_POST['price'];
         $description = $_POST['description'];
 
-        $query = "UPDATE tbl_producto SET nombre = '$name', precio = $price, descripcion = '$description', WHERE id = $id";
-        echo $query;
+        $query = "UPDATE tbl_producto SET nombre = '$name', descripcion = '$description', precio = '$price' WHERE id = '$id'";
         $result = mysqli_query($connection, $query);
         if(!$result){
-            die('Query Failed');
+            die('Edit Query Failed');
         }
     }
 
