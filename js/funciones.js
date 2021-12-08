@@ -8,9 +8,12 @@ function generarVentas(){
         //-Registrar datos de forma automática y aleatoria para una venta simulada
         //(precio(tbl_producto),fecha de venta,cantidad y total)
         setInterval(function(){ 
-            alert("Hello"); 
+            //debe ir la funcion apra generar las ventas
+            //elegimos un producto de los que tengamos enla base de datos   
+            //alert("Hello"); 
             console.log(contador);
         }, 5000);       
         contador++;
     }  
 }
+
