@@ -7,7 +7,7 @@ $(document).ready(function() {
   fetchProducts();
   $('#product-result').hide();
 
-  // search key type event
+  // Search by Key Type (Event)
   $('#search').keyup(function() {
     if($('#search').val()) {
       let search = $('#search').val();
@@ -84,10 +84,10 @@ $(document).ready(function() {
                     </a>
                     </td>                   
                     <td>${product.precio}</td>
-                    <td>${product.descripcion}</td>                   
-                    <td>${product.receta}</td>                   
-                    <td>${product.propiedades}</td>                   
+                    <td>${product.descripcion}</td>
+                    <td>${product.propiedades}</td>
                     <td>${product.usos}</td>
+                    <td>${product.receta}</td>
                     <td>
                       <a class="btn btn-secondary">
                         <i class="fas fa-cog"></i>
@@ -104,21 +104,26 @@ $(document).ready(function() {
     });
   }
   
+  // Send Products (New or Edited)
   $('#product-form').submit(e => {
     e.preventDefault();
     const postData = {
+      id: $('#productId').val(),
       name: $('#name').val(),
       price: $('#price').val(),
       description: $('#description').val(),
-      id: $('#productId').val()
+      properties: $('#properties').val(),
+      uses: $('#uses').val(),
+      recipes: $('#recipes').val()
     };
     console.log(postData.id);
     const url = edit === false ? 'backend/product-add.php' : 'backend/product-edit.php';
-    //url = 'backend/product-add.php';
     console.log(postData, url);
     $.post(url, postData, (response) => {
+      edit=false;
       console.log(response);
       $('#product-form').trigger('reset');
+      document.getElementById('name-action').innerHTML = 'New Product';
       fetchProducts();
     });
   });
@@ -135,26 +140,30 @@ $(document).ready(function() {
     }
   });
 
-  // Editar los Productos mostrados en Formulario
+  // Show a Product Listed Selected in Formulary
   $(document).on('click', '.product-item', function() {
     let element = $(this)[0].parentElement.parentElement;
     let id = $(element).attr("productId");
       //console.log(id);
-      //primero obtenemos los datos del elemtno clickeado
       $.post('backend/product-single.php', {id}, function(response){
         edit = true;
         //console.log(response);
         const product = JSON.parse(response);
         //console.log(product);
+        $('#productId').val(product.id);
         $('#name').val(product.nombre);
         $('#price').val(product.precio);
         $('#description').val(product.descripcion);
-        $('#productId').val(product.id);
+        $('#recipes').val(product.recetas);
+        $('#properties').val(product.propiedades);
+        $('#uses').val(product.usos);
+        //title action
+        document.getElementById('name-action').innerHTML = 'Edit Product';
      })
   });
 
   /*
-  // Get a Single Product by Id 
+  // Get a Single Product by Id - The same above ^^^^
   $(document).on('click', '.product-item', function() {
     let element = $(this)[0].parentElement.parentElement;
     let id = $(element).attr('productId');
