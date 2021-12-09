@@ -13,7 +13,6 @@
         die('Single Query Failed');
     }
 
-    
     $json = array();
     while($row = mysqli_fetch_array($result)) {
     $json[] = array(
