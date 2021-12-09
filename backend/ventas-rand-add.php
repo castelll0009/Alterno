@@ -34,6 +34,6 @@
             die('Add Query Failed');
         }
 
-        echo 'Sale Added Successfully';    
+        echo 'Random Sale Added Successfully';    
 
 ?>

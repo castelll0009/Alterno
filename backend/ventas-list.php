@@ -3,7 +3,7 @@
   include('database.php');
 
   //Puede ser ordenado (ORDER BY) por fecha o por id, por defecto se deja en id.
-  $query = "SELECT p.id AS p_id, p.nombre AS p_nombre, p.precio AS p_precio, v.id AS v_id, v.cantidad AS v_cantidad, v.fecha_de_venta AS v_fecha, v.precio_total AS v_total FROM tbl_venta v, tbl_producto p WHERE p.id = v.id_producto_venta";
+  $query = "SELECT p.id AS p_id, p.nombre AS p_nombre, p.precio AS p_precio, v.id AS v_id, v.cantidad AS v_cantidad, v.fecha_de_venta AS v_fecha, v.precio_total AS v_total FROM tbl_venta v, tbl_producto p WHERE p.id = v.id_producto_venta ORDER BY v.id";
   $result = mysqli_query($connection, $query);
   //echo $result;
   

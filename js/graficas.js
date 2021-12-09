@@ -19,9 +19,11 @@ function rotular_grafica(){
       products.forEach(product => {         
         xValues.push(product.nombre);           
         yValues.push(product.cantidad_total);           
-      });    
+      });
+      //console.log(xValues);
+      //console.log(yValues);
                      
-       myChart = new Chart("myChart", {    
+      myChart = new Chart("myChart", {    
         type: "bar",
         data: {
           labels: xValues,

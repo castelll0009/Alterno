@@ -142,6 +142,10 @@ $(document).ready(function() {
       }
     });
   }
+
+  setInterval(function() {
+    fetchVentas();
+  }, 1000);
   
   // Add New Sale
   $('#sale-form').submit(e => {

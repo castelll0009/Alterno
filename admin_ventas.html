@@ -23,16 +23,16 @@
       <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="admin.html">Productos
+            <a class="nav-link" href="index.html">Principal
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="admin.html">Productos</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#">Ventas</a>
           </li>
-          <!--<li class="nav-item">
-            <a class="nav-link" href="#">Graficas</a>
-          </li>-->
         </ul>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -102,12 +102,22 @@
         </div>
         
         <!-- GRAFICAs  DE  BARRAS  EN TIEMPO REAL  -->
-        <div class="contenedor-grafica-barras">                    
-          <h1>GRaficas  de  barras here</h1>
-          <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-          
-          
-        </div>
+        <form style="width: 50%;">
+          <div class="contenedor-grafica-barras">
+            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+          </div>
+          <div class="form-group">
+            <button id="sales-rand-on" styles="wrap-content" type="button" class="btn btn-info btn-block text-center"> 
+              Iniciar Registro de Ventas Automatico 
+            </button>
+          </div>
+          <div class="form-group">
+            <button id="danger-delete" styles="wrap-content" type="button" class="danger-delete btn btn-danger btn-block text-center"> 
+              Eliminar Registro de Ventas (TODO)
+            </button>
+          </div>
+        </form>
+        
         <!-- TABLE  -->
         <div class="col-md-7">
           <table class="table table-bordered table-sm">
@@ -134,11 +144,12 @@
       crossorigin="anonymous"></script>
     <!-- Frontend Logic -->
     <script src="js/app_ventas.js"></script>
-    <script src="js/funciones.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <!-- graficas -->
+    <!-- CHARTS -->
     <script src="js/graficas.js"></script>
+    <!-- AUTO SALES -->
+    <script src="js/funciones.js"></script>
   </body>
   
 </html>
