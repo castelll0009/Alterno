@@ -11,7 +11,7 @@
 
         //Random Date Generator
         //$year = rand(2020,x);
-        $month = rand(1,12);
+        /*$month = rand(1,12);
         $day = rand(1,31);
         $months_30 = array(4,6,9,11);
         if(in_array($month, $months_30) && $day == 31){
@@ -20,7 +20,8 @@
             $day = 28;
         }
         //$date = $year . "-" . $month . "-" . $day;
-        $date = "2021-" . sprintf('%02d', $month) . "-" . sprintf('%02d', $day);
+        $date = "2021-" . sprintf('%02d', $month) . "-" . sprintf('%02d', $day);*/
+        $date = date("Y-m-d");
 
         //precio total , lo calculamos usando la llave forane Id_prodcucto_venta 
         $precio_total = $cantidad * $precio;
