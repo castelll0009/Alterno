@@ -1,22 +1,20 @@
-//consulta primeros  5  , insertarlos
-    $.post('backend/graficar.php', function(response) {        
-        const productos = JSON.parse(response);    
-        console.log(productos);
-        
-    });
 
-var xValues =  [ "pro1", "Producto2", "Producto3", "Producto4", "Producto5"];
+var xValues;
+var yValues;
+fetchProducts();
 //reemplazar por los  valores cantidad de ventas
 //consulta  cantidad de productos vendidos por id_producto
-var yValues = [55, 49, 44, 24, 15];
 var barColors = ["red", "green","blue","orange","brown"];
+console.log(barColors);
+console.log(xValues);
+console.log(yValues);
 
 new Chart("myChart", {
   type: "bar",
   data: {
     labels: xValues,
     datasets: [{
-      backgroundColor: barColors,
+      //backgroundColor: barColors,
       data: yValues
     }]
   },
@@ -28,27 +26,49 @@ new Chart("myChart", {
     }
   }
 });
-
-// Fetching Products
+/*
+// Fetching Data Products
 function fetchProducts() {
   $.ajax({
-    url: 'backend/products-list.php',
+    url: 'backend/graficar.php',
     type: 'GET',
     success: function(response) {
       const products = JSON.parse(response);
-      xValues = '[';
+      //console.log(products);
+      products.forEach(product => {
+        xValues.push(product.nombre);
+        yValues.push(product.cantidad_total);
+      });
+      //console.log(xValues);
+      //console.log(yValues);
+    }
+  });*/
+
+// Fetching Data Products
+function fetchProducts() {
+  $.ajax({
+    url: 'backend/graficar.php',
+    type: 'GET',
+    success: function(response) {
+      const products = JSON.parse(response);
+      xValues = `[`;
+      yValues = `[`;
       let cont = 1;
       console.log(products);
       products.forEach(product => {
         if(cont == 1){
-          xValues += `"${product.nombre}"`
+          xValues += `'${product.nombre}'`
+          yValues += `'${product.cantidad_total}'`
         } else {
-          xValues += `, "${product.nombre}"`
+          xValues += `, '${product.nombre}'`
+          yValues += `, '${product.cantidad_total}'`
         }
         cont ++;
       });
-      xValues += `]`
+      xValues += `]`;
+      yValues += `]`;
       console.log(xValues);
+      console.log(yValues);
     }
   });
 }
