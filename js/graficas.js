@@ -28,3 +28,27 @@ new Chart("myChart", {
     }
   }
 });
+
+// Fetching Products
+function fetchProducts() {
+  $.ajax({
+    url: 'backend/products-list.php',
+    type: 'GET',
+    success: function(response) {
+      const products = JSON.parse(response);
+      xValues = '[';
+      let cont = 1;
+      console.log(products);
+      products.forEach(product => {
+        if(cont == 1){
+          xValues += `"${product.nombre}"`
+        } else {
+          xValues += `, "${product.nombre}"`
+        }
+        cont ++;
+      });
+      xValues += `]`
+      console.log(xValues);
+    }
+  });
+}
