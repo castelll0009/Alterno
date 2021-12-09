@@ -4,49 +4,34 @@ $(document).ready(function() {
 
   // Testing Jquery
   console.log('jquery is working!');
+  fetchVentas();
   fetchProducts();
-  $('#product-result').hide();
+  getCurrentDate();
 
   // Search by Key Type (Event)
   $('#search').keyup(function() {
     if($('#search').val()) {
       let search = $('#search').val();
       $.ajax({
-        url: 'backend/product-search.php',        
+        url: 'backend/venta-search.php',        
         type: 'POST',
-        data: {search}, //podemos enviar string , objetos
-        /*success: function (response) {
-          console.log(response);        
-          if(!response.error) {
-            let products = JSON.parse(response);
-            let template = '';
-            products.forEach(product => {
-              template += `
-                     <li><a href="#" class="product-item">${product.nombre}</a></li>
-                    ` 
-            });
-            $('#product-result').show();
-            $('#container').html(template);
-          }
-        }*/
+        data: {search},
         success: function(response) {
           const products = JSON.parse(response);
           let template = '';
-          console.log(products);
           products.forEach(product => {
-            template += `
+            template +=  `
                     <tr productId="${product.id}">
                       <td>${product.id}</td>
                       <td>
                       <a href="#" class="product-item">
                         ${product.nombre} 
                       </a>
-                      </td>                   
+                      </td>
                       <td>${product.precio}</td>
-                      <td>${product.descripcion}</td>
-                      <td>${product.propiedades}</td>   
-                      <td>${product.usos}</td>
-                      <td>${product.receta}</td>
+                      <td>${product.cantidad}</td>
+                      <td>${product.fecha}</td>
+                      <td>${product.precio_total}</td>
                       <td>
                         <a class="btn btn-secondary">
                           <i class="fas fa-cog"></i>
@@ -58,12 +43,12 @@ $(document).ready(function() {
                     </tr>
                   `
           });
-          $('#products').html(template);
+          $('#sales').html(template);
         }
       })
     } 
     else {
-      fetchProducts();
+      fetchVentas();
     }
   });
 
@@ -74,8 +59,61 @@ $(document).ready(function() {
       type: 'GET',
       success: function(response) {
         const products = JSON.parse(response);
-        let template = '';
+        let template = '<option selected disabled hidden>Producto</option>';
         //console.log(products);
+        products.forEach(product => {
+          template += `
+                  <option value="${product.nombre}">${product.nombre}</option>
+                `
+        });
+        $('#name').html(template);
+      }
+    });
+  }
+
+  // Get Current Date
+  function getCurrentDate() {
+    let date = new Date().toISOString().slice(0, 10);
+    $('#date').val(date);
+  }
+
+  // Get Precio
+  $('#name').change(function() {
+    if($('#name').val()) {
+      let search = $('#name').val();
+      //console.log(search);
+      $.ajax({
+        url: 'backend/product-search.php',
+        type: 'POST',
+        data: {search},
+        success: function(response) {
+          const product = JSON.parse(response);
+          //console.log(product);
+          $('#price').val(product[0].precio);
+        }
+      });
+    }
+  });
+
+  // Get Total
+  $('#amount').change(function() {
+    if($('#price').val()) {
+      let price = $('#price').val();
+      let amount = $('#amount').val();
+      let total = price * amount;
+      $('#total').val(total);
+    }
+  });
+
+  // Fetching Ventas
+  function fetchVentas() {
+    $.ajax({
+      url: 'backend/ventas-list.php',
+      type: 'GET',
+      success: function(response) {
+        const products = JSON.parse(response);
+        let template = '';
+        console.log(products);
         products.forEach(product => {
           template += `
                   <tr productId="${product.id}">
@@ -84,28 +122,28 @@ $(document).ready(function() {
                     <a href="#" class="product-item">
                       ${product.nombre} 
                     </a>
-                    </td>                   
+                    </td>
                     <td>${product.precio}</td>
-                    <td>${product.descripcion}</td>
-                    <td>${product.propiedades}</td>
-                    <td>${product.usos}</td>
-                    <td>${product.receta}</td>
+                    <td>${product.cantidad}</td>
+                    <td>${product.fecha}</td>
+                    <td>${product.precio_total}</td>
                     <td>
                       <a class="btn btn-secondary">
                         <i class="fas fa-cog"></i>
                       </a>
-                      <a class="product-delete btn btn-danger" style="color:#fff;">
+                      <a class="btn btn-danger" style="color:#fff;">
                         <i class="far fa-trash-alt"></i>
                       </a>
                     </td>
                   </tr>
                 `
         });
-        $('#products').html(template);
+        $('#sales').html(template);
       }
     });
   }
   
+  /*
   // Send Products (New or Edited)
   $('#product-form').submit(e => {
     e.preventDefault();
@@ -119,17 +157,20 @@ $(document).ready(function() {
       recipes: $('#recipes').val()
     };
     console.log(postData.id);
-    const url = edit === false ? 'backend/product-add.php' : 'backend/product-edit.php';
+    const url = edit === false ? 'backend/-add.php' : 'backend/-edit.php';
     console.log(postData, url);
     $.post(url, postData, (response) => {
       edit=false;
       console.log(response);
       $('#product-form').trigger('reset');
       document.getElementById('name-action').innerHTML = 'New Product';
+      fetchVentas();
       fetchProducts();
+      getCurrentDate();
     });
-  });
+  });*/
 
+  /*
   // Delete a Single Product
   $(document).on('click', '.product-delete', function() {
     if(confirm('Are you sure you want to delete it?')) {
@@ -137,7 +178,7 @@ $(document).ready(function() {
       let id = $(element).attr('productId');
       $.post('backend/product-delete.php', {id}, function(response) {
         //console.log(response);
-        fetchProducts();
+        fetchVentas();
       });
     }
   });

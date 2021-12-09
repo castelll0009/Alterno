@@ -15,7 +15,11 @@ if(!empty($search)) {
   while($row = mysqli_fetch_array($result)) {
     $json[] = array(
       'nombre' => $row['nombre'],
-      'descripcion' => $row['descripcion'],
+      'precio' => $row['precio'],
+      'descripcion' => $row['descripcion'],      
+      'propiedades' => $row['propiedades'],            
+      'usos' => $row['usos'],      
+      'recetas' => $row['recetas'],  
       'id' => $row['id']
     );
   }

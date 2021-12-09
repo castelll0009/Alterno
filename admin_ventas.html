@@ -16,17 +16,17 @@
       <div class="contenedor-img">
         <img  id="zumbido" class="img-logo" style="width: 50px;" src="logo.png">
       </div>
-      <a class="navbar-brand" style="user-select: none;">Alterno - Administración (Productos)</a>
+      <a class="navbar-brand" style="user-select: none;">Alterno - Administración (Ventas)</a>
 
       <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Productos
+            <a class="nav-link" href="admin.html">Productos
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="admin_ventas.html">Ventas</a>
+            <a class="nav-link" href="#">Ventas</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Graficas</a>
@@ -40,7 +40,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <form class="form-inline my-2 my-lg-0">
-              <input name="search" id="search" class="form-control mr-sm-2" type="search" placeholder="Nombre del Producto" aria-label="Search">
+              <input name="search" id="search" class="form-control mr-sm-2" type="search" placeholder="Nombre del producto" aria-label="Search">
               <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
             </form>
         </div>
@@ -56,37 +56,42 @@
               <form id="product-form">
 
                 <div class="form-group">
-                  <h5 id="name-action">Nuevo producto</h5>
+                  <h5 id="name-action">Nueva Venta</h5>
                 </div>
+                
                 <input name='productId' type='hidden' id='productId'>
+                
                 <div class="form-group">
-                  <input type="text" id="name" placeholder="Nombre" class="form-control" required="required">
+                  <!--<input class="form-control" id="price" type="text" placeholder="Producto">-->
+                  <select id="name" class="form-control" required="required">
+                    <option selected disabled hidden>Producto</option>
+                  </select>
                 </div>
+                
                 <div class="form-group">
-                  <input type="number" min="0" step="50" id="price" placeholder="Precio" class="form-control" required="required">
+                  <input class="form-control" id="price" type="text" placeholder="Precio" disabled="">
                 </div>
+                
                 <div class="form-group">
-                  <textarea id="description" cols="30" rows="10" class="form-control" placeholder="Descripción" required="required" style="height: 150px;"></textarea>
+                  <input type="number" min="0" id="amount" placeholder="Cantidad" class="form-control" required="required">
                 </div>
-
+                
                 <div class="form-group">
-                  <button id="collapse-btn" type="button" class="btn btn-block text-left dropdown-toggle" data-toggle="collapse" data-target="#collapseForm" aria-expanded="false" aria-controls="collapseForm"> 
-                    Ver más opciones... 
-                  </button>
+                  <!--<div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
+                    <input placeholder="Select date" type="text" id="example" class="form-control">
+                    <i class="fas fa-calendar input-prefix" tabindex=0></i>
+                  </div>-->
+                  <input class="form-control" id="date" type="text" placeholder="Fecha" disabled="">
+                  <!--<input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31">-->
                 </div>
-                <div id="collapseForm" class="collapse in">
-                  <div class="form-group">
-                    <textarea id="properties" cols="30" rows="10" class="form-control" placeholder="Propiedades" style="height: 150px;"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <textarea id="uses" cols="30" rows="10" class="form-control" placeholder="Usos" style="height: 150px;"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <textarea id="recipes" cols="30" rows="10" class="form-control" placeholder="Recetas" style="height: 150px;"></textarea>
-                  </div>
+                
+                <div class="form-group">
+                  <input class="form-control" id="total" type="text" placeholder="Total" disabled="">
+                  <!--<input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31">-->
                 </div>
+                
                 <button type="submit" class="btn btn-primary btn-block text-center">
-                  Guardar
+                  Registrar
                 </button>
 
               </form>
@@ -96,29 +101,19 @@
 
         <!-- TABLE  -->
         <div class="col-md-7">
-          <!-- RESULTADOS DE PRUEBA -->
-          <div class="card my-4" id="product-result">
-            <div class="card-body">
-              <!-- SEARCH -->
-              <ul id="container"></ul>
-            </div>
-          </div>
-          
-
           <table class="table table-bordered table-sm">
             <thead>
               <tr>
                 <td>Id</td>
-                <td>Nombre</td>
+                <td>Producto</td>
                 <td>Precio</td>
-                <td>Description</td>
-                <td>Propiedades</td>
-                <td>Usos</td>
-                <td>Recetas</td>
-                <td>Action</td>
+                <td>Cantidad</td>
+                <td>Fecha</td>
+                <td>Total</td>
+                <td>Acción</td>
               </tr>
             </thead>
-            <tbody id="products"></tbody>
+            <tbody id="sales"></tbody>
           </table>
         </div>
       </div>
@@ -129,7 +124,7 @@
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
     <!-- Frontend Logic -->
-    <script src="js/app.js"></script>
+    <script src="js/app_ventas.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
