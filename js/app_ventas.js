@@ -21,7 +21,7 @@ $(document).ready(function() {
           let template = '';
           products.forEach(product => {
             template +=  `
-                    <tr productId="${product.id}">
+                    <tr saleId="${product.id}">
                       <td>${product.id}</td>
                       <td>
                       <a href="#" class="product-item">
@@ -36,7 +36,7 @@ $(document).ready(function() {
                         <a class="btn btn-secondary">
                           <i class="fas fa-cog"></i>
                         </a>
-                        <a class="btn btn-danger" style="color:#fff;">
+                        <a class="sale-delete btn btn-danger" style="color:#fff;">
                           <i class="far fa-trash-alt"></i>
                         </a>
                       </td>
@@ -77,7 +77,7 @@ $(document).ready(function() {
     $('#date').val(date);
   }
 
-  // Get Precio
+  // Get Price
   $('#name').change(function() {
     if($('#name').val()) {
       let search = $('#name').val();
@@ -105,7 +105,7 @@ $(document).ready(function() {
     }
   });
 
-  // Fetching Ventas
+  // Fetching Sales
   function fetchVentas() {
     $.ajax({
       url: 'backend/ventas-list.php',
@@ -113,10 +113,10 @@ $(document).ready(function() {
       success: function(response) {
         const products = JSON.parse(response);
         let template = '';
-        console.log(products);
+        //console.log(products);
         products.forEach(product => {
           template += `
-                  <tr productId="${product.id}">
+                  <tr saleId="${product.id}">
                     <td>${product.id}</td>
                     <td>
                     <a href="#" class="product-item">
@@ -131,7 +131,7 @@ $(document).ready(function() {
                       <a class="btn btn-secondary">
                         <i class="fas fa-cog"></i>
                       </a>
-                      <a class="btn btn-danger" style="color:#fff;">
+                      <a class="sale-delete btn btn-danger" style="color:#fff;">
                         <i class="far fa-trash-alt"></i>
                       </a>
                     </td>
@@ -143,81 +143,38 @@ $(document).ready(function() {
     });
   }
   
-  /*
-  // Send Products (New or Edited)
-  $('#product-form').submit(e => {
+  // Add New Sale
+  $('#sale-form').submit(e => {
     e.preventDefault();
     const postData = {
-      id: $('#productId').val(),
       name: $('#name').val(),
-      price: $('#price').val(),
-      description: $('#description').val(),
-      properties: $('#properties').val(),
-      uses: $('#uses').val(),
-      recipes: $('#recipes').val()
+      amount: $('#amount').val(),
+      date: $('#date').val(),
+      total: $('#total').val()
     };
-    console.log(postData.id);
-    const url = edit === false ? 'backend/-add.php' : 'backend/-edit.php';
-    console.log(postData, url);
+    console.log(postData);
+    const url = 'backend/venta-add.php';
+    //console.log(postData, url);
     $.post(url, postData, (response) => {
       edit=false;
       console.log(response);
-      $('#product-form').trigger('reset');
-      document.getElementById('name-action').innerHTML = 'New Product';
+      $('#sale-form').trigger('reset');
       fetchVentas();
       fetchProducts();
       getCurrentDate();
     });
-  });*/
+  });
 
-  /*
-  // Delete a Single Product
-  $(document).on('click', '.product-delete', function() {
-    if(confirm('Are you sure you want to delete it?')) {
+  // Delete a Single Sale
+  $(document).on('click', '.sale-delete', function() {
+    if(confirm('¿Seguro que quieres eliminar este registro?')) {
       let element = $(this)[0].parentElement.parentElement;
-      let id = $(element).attr('productId');
-      $.post('backend/product-delete.php', {id}, function(response) {
+      let id = $(element).attr('saleId');
+      $.post('backend/venta-delete.php', {id}, function(response) {
         //console.log(response);
         fetchVentas();
       });
     }
   });
-
-  // Show a Product Listed Selected in Formulary
-  $(document).on('click', '.product-item', function() {
-    let element = $(this)[0].parentElement.parentElement;
-    let id = $(element).attr("productId");
-      //console.log(id);
-      $.post('backend/product-single.php', {id}, function(response){
-        edit = true;
-        //console.log(response);
-        const product = JSON.parse(response);
-        //console.log(product);
-        $('#productId').val(product.id);
-        $('#name').val(product.nombre);
-        $('#price').val(product.precio);
-        $('#description').val(product.descripcion);
-        $('#recipes').val(product.recetas);
-        $('#properties').val(product.propiedades);
-        $('#uses').val(product.usos);
-        //title action
-        document.getElementById('name-action').innerHTML = 'Edit Product';
-     })
-  });
-
-  /*
-  // Get a Single Product by Id - The same above ^^^^
-  $(document).on('click', '.product-item', function() {
-    let element = $(this)[0].parentElement.parentElement;
-    let id = $(element).attr('productId');
-    $.post('backend/product-single.php', {id}, function(response) {
-      const product = JSON.parse(response);
-      $('#name').val(product.nombre);
-      $('#price').val(product.precio);
-      $('#description').val(product.descripcion);
-      edit = true;
-    });
-  });
-  */
 
 });

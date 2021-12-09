@@ -51,7 +51,7 @@ $(document).ready(function() {
                         <a class="btn btn-secondary">
                           <i class="fas fa-cog"></i>
                         </a>
-                        <a class="btn btn-danger" style="color:#fff;">
+                        <a class="product-delete btn btn-danger" style="color:#fff;">
                           <i class="far fa-trash-alt"></i>
                         </a>
                       </td>
@@ -132,7 +132,7 @@ $(document).ready(function() {
 
   // Delete a Single Product
   $(document).on('click', '.product-delete', function() {
-    if(confirm('Are you sure you want to delete it?')) {
+    if(confirm('¿Seguro que quieres eliminar este producto?')) {
       let element = $(this)[0].parentElement.parentElement;
       let id = $(element).attr('productId');
       $.post('backend/product-delete.php', {id}, function(response) {
