@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- CHART graficas  de barras -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>    
   </head>
   <body>
 
@@ -99,9 +101,12 @@
           </div>
         </div>
         
-        <!-- GRAFICA  DE  BARRAS  EN TIEMPO REAL  -->
-        <div class="contenedor-grafica-barras">          
+        <!-- GRAFICAs  DE  BARRAS  EN TIEMPO REAL  -->
+        <div class="contenedor-grafica-barras">                    
           <h1>GRaficas  de  barras here</h1>
+          <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+          
+          
         </div>
         <!-- TABLE  -->
         <div class="col-md-7">
@@ -131,6 +136,8 @@
     <script src="js/app_ventas.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- graficas -->
+    <script src="js/graficas.js"></script>
   </body>
-
+  
 </html>
