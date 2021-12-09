@@ -1,4 +1,6 @@
-var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+//consulta primeros  5  , insertarlos
+var xValues = ["producto1", "Producto2", "Producto3", "Producto4", "Producto5"];
+//reemplazar por los  valores cantidad de ventas
 var yValues = [55, 49, 44, 24, 15];
 var barColors = ["red", "green","blue","orange","brown"];
 
@@ -15,7 +17,7 @@ new Chart("myChart", {
     legend: {display: false},
     title: {
       display: true,
-      text: "World Wine Production 2018"
+      text: "Ventas de productos  en el mes actual, en timepo real."
     }
   }
 });
