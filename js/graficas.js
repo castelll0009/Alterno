@@ -18,7 +18,7 @@ new Chart("myChart", {
     legend: {display: false},
     title: {
       display: true,
-      text: "Ventas de productos  en el mes actual, en timepo real."
+      text: "Ventas de productos en tiempo real."
     }
   }
 });
