@@ -23,7 +23,7 @@ function generarVentas(){
                     id_producto: product.id,
                     precio: product.precio,                                          
                 };    
-                $.post('backend/venta-add.php', postData, (response) => {                
+                $.post('backend/ventas-rand-add.php', postData, (response) => {                
                     console.log(response);
                 });
                 /*                
