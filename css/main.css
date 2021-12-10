@@ -15,6 +15,7 @@ main{
 }
 
 #info-title{
+	padding-top: 50px;		
 	color: var(--main-primary);
 	margin-top: -80px;
 	font-size: 5em;
@@ -176,46 +177,55 @@ h2{
 	position: relative;	
   }
 
+.div-imagen{	
+	width: 100%;	
+	
+}
+
 .figure-container{		
-	max-height: 510px;
+	position: relative;
+	background-color: white;
+	border-color: rgb(118, 177, 0);
+	border-radius: 7%;
+	border: 2px solid  rgba(0, 17, 2, 0.918);;
+	min-width: 300px;
+	max-width: 300px;
+	min-height: 300px;
+	max-height: max-content;
 	overflow: hidden;
 	position: relative;			
 }
 
-figure{
-	overflow: hidden;
-	outline: none;
-	cursor:pointer;
-	transition: all 300ms;
-	position: relative;
-	min-width: 320px;	
-	max-width: 320px;		
-	min-height: 200px;	
-	max-height: 600px;	
-	margin: 10px;
-	background-color: var(--main-primary);
-	background-color: var(--main-primary);
-	border-radius: 20px;
-	border-width: 200px;
-	padding: 10px;
-	padding-top: 20px;	
-	padding: 0px;		
+.div-imagen{
+  width: 100%;  
+  display: block; 
+}
+img{
+	width: 100%;	
+}
+.div-detalles-producto{	
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	margin: auto;
+	text-align: center;
 }
 
 figure h1{
+	color: white;
+	font-size: 32px;
+	margin-bottom: 0;
+	background-color: rgba(0, 17, 2, 0.918);
+}
+figure h2{
+	color: white;
 	font-size: 32px;
 	padding-top: 10px;
 	padding-bottom: 3.7px;
+	background-color: black;
+	opacity: 0.5;
 }
 
-figure img{	
-	width: 50%;	
-	-webkit-user-drag: none;	
-	-moz-user-select: none; 
-   -webkit-user-select: none;
-   -ms-user-select: none;
-   user-select: none; 
-}
 
 #iframe-map{		
 	width : 600px;

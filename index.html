@@ -19,7 +19,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lato:wght@300;400;700&family=Zilla+Slab:wght@500&display=swap" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<title>UNI Store</title>
+		<title>Alterno</title>
 	</head>
 	<body>
 		<main>
@@ -95,20 +95,18 @@
 						<nav class="menu"></nav>
 							<ul  class=" menu-ul">
 							<a href = "index.php" >
-								<li href= "index.php" ><label class="fa fa-home" style="color: #000" ></label></li>
+								<li href= "index.php" ><label class="fa fa-home" style="color: #02350f" ></label></li>
 							</a>
 							<a href = "catalogo.php" >
-								<li >CATALOGO</li>
+								<li  >CATALOGO</li>
 							</a>
 							<a href = "contactos.html" >
 								<li >CONTACTOS </li>
 							</a>
 							<a href = "" >
 								<li >ACERCA DE </li>
-							</a>		
-							<a>
-								<li href="admin.html" style="color: #000; font-weight: bold;">ADMINISTRACIÓN</li>
-							</a>
+							</a>																
+							<li style="color: #023609; font-weight: bold;">INICIAR SESION</li>
 						</ul>
 					</div>					
 				</div>
@@ -116,96 +114,42 @@
 			<div class="info-container" >		
 				<img id="img-home" src="alterno.png" class="overflow-img animate__animated animate__fadeIn img-tam-mediano">							
 				<h1 id="info-title" class=" fuente-tam color-verde animate__animated animate__fadeIn"> Catalogo</h1>		
-				<div id="div-index" class="animate__animated animate__flipInX">
-					<h2 class="fuente-lato" style="font-size: 1.5em; margin-top:-10px;" >El mejor mercado a Agranel </h2>
-					<p>Si buscas alegrarle el dia a alguien, o simplemente ganarse su corazòn estas en el sition indicado.</p>				
+				<div id="div-index" class="animate__animated animate__flipInX">										
 				</div>				
 			</div>
 
 			<div class="cards-container" >
-				<figure class="figure-container">
-					<h1 class="entrar-detalles titulo-producto">Anchetas</h1>	
-															
-					<!-- contenedor de  los items del menu-->
-					<div class="div-figure" >							
-						<img class="entrar-detalles accion-icono" src="imgs/anchetas.png" >
-						<p class="sona0 " >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt 
-								
-								<span class=" puntos0  puntos2" style="color:rgb(126, 126, 126)">...Leer Más</span>	
-								<span  class="text0" id="text2">													
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.								
-								quis nostrud exercitation ullamco laboris nisi ut.
-								<span style="color:rgb(163, 161, 161)"><br> <br>Leer Menos</span></p>							   															  					   															
+				<figure class="figure-container">					
+					<h1 class="h-productos">Granos de maiz</h1>	
+					<div class="div-imagen">
+						<img class="imagen-producto"  src="imgs/maiz.jpg" >						
 					</div>
-					<!-- Swiper contenedor totoal, submenu , detalles-->
-					<div class="contenedor-swiper-tarjetas">					
-						 <div class="contenedor-todo-swiper">						 	
-							<div class="swiper-container mySwiper">
-							  <div class="swiper-wrapper">
-
-								<div class="swiper-slide">
-									<h5>Dulces $50,000</h5>
-									<img src="imgs/anchetas-dulces.jpg" >	
-								</div>
-								<div class="swiper-slide">
-									<h5>Dulces y licores $60,000</h5>
-									<img src="imgs/anchetas_dulces_licor.png" >	
-								</div>
-								<div class="swiper-slide">
-									<h5>Saludable $40,000</h5>
-									<img src="imgs/anchetas_saludables.png" >	
-								</div> 
-							  </div>
-
-							  <div class="swiper-button-next"></div>
-							  <div class="swiper-button-prev"></div>
-							  <div class="swiper-pagination"></div>
-							</div>										
-						</div>		
-						<!-- informacion desplegable, tarjetas de inforamcion-->
-						<div class="contenedor-tarjetas-info">							
-								<div class="tarjeta-info about">
-									<h4>Detalles</h4> 
-									<p class="p-about">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-									consequat. Duis, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,							
-									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea LIMITE.								
-									</p>
-								</div>
-								<div class="tarjeta-info contenido">
-									<h4>Contenido</h4> 										
-									<img src="imgs/anchetas-contenido.png" >				
-									<h6>Personalizable</h6>	
-									<div class="contenido-personalizable">										
-										<h7>Tipo de ancheta:</h7>
-										<select name="select" class="variantes-producto"   >
-											<option  value="50000">dulce</option>
-											<option  value="60000">dulce y licor</option>
-											<option  value="40000">saludable</option>
-										</select>	
-										  <h7>Descripción:</h7>										 
-										  <textarea   type="descripcion" name="descripcion" rows="3" cols="10"class="descripcion-productos" name="descripcion"  placeholder="Escribe aquí tu descripción.."></textarea>									 										  
-									</div>
-								</div>
-								<div class="tarjeta-info orden">
-									<h4 class="h4-orden">Orden</h4> 
-									<div class="cantidad-unidades">	
-										<button class="btn-comprar">comprar</button>	
-										<span class="span-cantidad">
-											<button  class="botones-unidades disminuir-productos" >-</button>
-											<input type="text" class="cantidad-producto" value="1">
-											<button  class="botones-unidades aumentar-productos ">+</button>																															
-										</span>																				
-									</div>						
-								</div>
-						</div>
-					</div>										
+					<div class="div-detalles-producto">
+						<h2>$4000</h2>						
+					</div>															
+					<!-- contenedor de  los items del menu-->																		
 				</figure>	
-
+				<figure class="figure-container">					
+					<h1 class="h-productos">Frijoles</h1>	
+					<div class="div-imagen">
+						<img class="imagen-producto"  src="imgs/frijoles.jpg" >						
+					</div>
+					<div class="div-detalles-producto">
+						<h2>$4000</h2>						
+					</div>															
+					<!-- contenedor de  los items del menu-->																		
+				</figure>	
+				<figure class="figure-container">					
+					<h1 class="h-productos">Linaza</h1>	
+					<div class="div-imagen">
+						<img class="imagen-producto"  src="imgs/linaza.jpg" >						
+					</div>
+					<div class="div-detalles-producto">
+						<h2>$5000</h2>						
+					</div>															
+					<!-- contenedor de  los items del menu-->																		
+				</figure>	
+				<!-- FIGURES ANTIGUAS 
 				<figure class="figure-container">
 					<h1 class="entrar-detalles titulo-producto">Meriendas</h1>
 					<div class="div-figure" >
@@ -221,7 +165,7 @@
 							<span style="color:rgb(163, 161, 161)"><br> <br>Leer Menos</span></p>																									
 					</div>
 
-					<!-- Swiper contenedor totoal, submenu , detalles-->
+					
 					<div class="contenedor-swiper-tarjetas">					
 						<div class="contenedor-todo-swiper">						 	
 						   <div class="swiper-container mySwiper">
@@ -257,8 +201,7 @@
 							 <div class="swiper-button-prev"></div>
 							 <div class="swiper-pagination"></div>
 						   </div>										
-					   </div>		
-					   <!-- informacion desplegable, tarjetas de inforamcion-->
+					   </div>							   
 					   <div class="contenedor-tarjetas-info">							
 							   <div class="tarjeta-info about">
 								   <h4>Detalles</h4> 
@@ -298,274 +241,7 @@
 					   </div>
 				   </div>	
 				</figure>	
-				
-				<figure class="figure-container">
-					<h1 class="entrar-detalles titulo-producto">Desayunos sorpresa</h1>
-					<div   class="sona0  div-figure"  >					
-						<img class="entrar-detalles accion-icono" src="imgs/desayuno.png" alt="">					
-					<p>los desayunos sorpresa mas ricos y especiales estan aqui para
-						<span class="puntos0 " style="color:rgb(126, 126, 126)">...Leer Más</span>	
-						<span class="text0" id="text3">	
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					
-						<span style="color:rgb(163, 161, 161)"><br> <br>Leer Menos</span></p>
-					</div>			
-					
-					
-					<!-- Swiper contenedor totoal, submenu , detalles-->
-					<div class="contenedor-swiper-tarjetas">					
-						<div class="contenedor-todo-swiper">						 	
-						   <div class="swiper-container mySwiper">
-							 <div class="swiper-wrapper">
-
-							   <div class="swiper-slide">
-								   <h5>Desayuno Mixto $40,000</h5>
-								   <img src="imgs/desayunos _dulce_sal.jpg" >	
-							   </div>
-							   <div class="swiper-slide">
-								   <h5>Sandwitch y licores $40,000</h5>
-								   <img src="imgs/ducles-licores.jpg" >	
-							   </div>
-							   <div class="swiper-slide">
-								   <h5>Huevos Rancheros $40,000</h5>
-								   <img src="imgs/anchetas_saludables.png" >	
-							   </div> 
-							   <div class="swiper-slide">
-								<h5>Fruta, milo o jugo $40,000</h5>
-								<img src="imgs/anchetas_saludables.png" >	
-								</div> 
-								<div class="swiper-slide">
-									<h5>Huevos Rancheros $40,000</h5>
-									<img src="imgs/anchetas_saludables.png" >	
-								</div> 
-								<div class="swiper-slide">
-									<h5>Huevos Rancheros $40,000</h5>
-									<img src="imgs/anchetas_saludables.png" >	
-								</div> 
-							 </div>
-
-							 <div class="swiper-button-next"></div>
-							 <div class="swiper-button-prev"></div>
-							 <div class="swiper-pagination"></div>
-						   </div>										
-					   </div>		
-					   <!-- informacion desplegable, tarjetas de inforamcion-->
-					   <div class="contenedor-tarjetas-info">							
-							   <div class="tarjeta-info about">
-								   <h4>Detalles</h4> 
-								   <p class="p-about">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								   consequat. Duis, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,							
-								   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea LIMITE.								
-								   </p>
-							   </div>
-							   <div class="tarjeta-info contenido">
-								   <h4>Contenido</h4> 						
-								   <h6>Personalizable</h6>	
-									<div class="contenido-personalizable">										
-										<h7>Tipo de ancheta:</h7>
-										<select name="select" class="variantes-producto"  >
-											<option value="10000">desayuno1</option>
-											<option value="2000">desayuno2</option>
-											<option value="3000">desayuno3</option>
-											<option value="40000">desayuno4</option>
-											<option value="50000">desayuno5</option>
-										</select>	
-										  <h7>Descripción:</h7>										 
-										  <textarea   type="descripcion" name="descripcion" rows="3" cols="10" class="descripcion-productos" name="descripcion"  placeholder="Escribe aquí tu descripción.."></textarea>									 										  
-									</div>
-							   </div>
-							   <div class="tarjeta-info orden">
-								   <h4 class="h4-orden">Orden</h4> 
-								   <div class="cantidad-unidades">	
-									<button class="btn-comprar">comprar</button>	
-									<span class="span-cantidad">
-										<button  class="botones-unidades disminuir-productos" >-</button>
-										<input type="text" class="cantidad-producto" value="1">
-										<button  class="botones-unidades aumentar-productos">+</button>																															
-									</span>																				
-								</div>								
-							   </div>
-					   </div>
-				   </div>	
-				</figure>	
-
-				<figure class="figure-container">
-					<h1 class="entrar-detalles titulo-producto">Arreglos florales</h1>
-					<div class="sona0 div-figure" >
-						<img class="entrar-detalles accion-icono" src="imgs/arreglo-floral.png" >					
-					<p>1.<br>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt u
-						<span class="puntos0 puntos4" style="color:rgb(126, 126, 126)">...Leer Más</span>	
-						<span class="text0"  id="text4">	
-						tenemos arreglos florales de todo tipo, para bodas, entierros, jajaajsadasd web.								
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,																
-					
-						<span style="color:rgb(163, 161, 161)"><br> <br>Leer Menos</span></p>
-					</div>		
-						
-					<!-- Swiper contenedor totoal, submenu , detalles-->
-					<div class="contenedor-swiper-tarjetas">					
-						<div class="contenedor-todo-swiper">						 	
-						   <div class="swiper-container mySwiper">
-							 <div class="swiper-wrapper">
-
-							   <div class="swiper-slide">
-								   <h5>Rosas $40,000</h5>
-								   <img src="imgs/anchetas-dulces.jpg" >	
-							   </div>
-							   <div class="swiper-slide">
-								   <h5>Rosas y frutas  $40,000</h5>
-								   <img src="imgs/ducles-licores.jpg" >	
-							   </div>
-							   <div class="swiper-slide">
-								   <h5>Rosas y chocolates $40,000</h5>
-								   <img src="imgs/anchetas_saludables.png" >	
-							   </div> 
-							 </div>
-
-							 <div class="swiper-button-next"></div>
-							 <div class="swiper-button-prev"></div>
-							 <div class="swiper-pagination"></div>
-						   </div>										
-					   </div>		
-					   <!-- informacion desplegable, tarjetas de inforamcion-->
-					   <div class="contenedor-tarjetas-info">							
-							   <div class="tarjeta-info about">
-								   <h4>Detalles</h4> 
-								   <p class="p-about">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								   consequat. Duis, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,							
-								   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea LIMITE.								
-								   </p>
-							   </div>
-							   <div class="tarjeta-info contenido">
-								   <h4>Contenido</h4> 						
-								   <h6>Personalizable</h6>	
-								   <div class="contenido-personalizable">										
-									   <h7>Arreglos florales:</h7>
-									   <select name="select" class="variantes-producto"  >
-										   <option value="1">arreglo1</option>
-										   <option value="2">arreglo2</option>
-										   <option value="3">arreglo3</option>
-									   </select>	
-										 <h7>Descripción:</h7>										 
-										 <textarea   type="descripcion" name="descripcion" rows="3" cols="10" class="descripcion-productos" name="descripcion"  placeholder="Escribe aquí tu descripción.."></textarea>									 										  
-								   </div>
-							   </div>
-							   <div class="tarjeta-info orden">
-								   <h4 class="h4-orden">Orden</h4> 
-								   <div class="cantidad-unidades">	
-									<button class="btn-comprar">comprar</button>	
-									<span class="span-cantidad">
-										<button  class="botones-unidades disminuir-productos" >-</button>
-										<input type="text" class="cantidad-producto" value="1">
-										<button  class="botones-unidades aumentar-productos ">+</button>																															
-									</span>																				
-								</div>							
-							   </div>
-					   </div>
-				   </div>	
-					
-				</figure>	
-
-
-				<figure class="figure-container">
-					<h1 class="entrar-detalles titulo-producto">Bandejas</h1>	
-					<div class="sona0 div-figure" >
-						<img class="entrar-detalles accion-icono" src="imgs/bandejas.png" >					
-					<p>1.<br>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt u
-						<span class="puntos0" style="color:rgb(126, 126, 126)">...Leer Más</span>	
-						<span class="text0"  id="text5">	
-				
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					
-						<span style="color:rgb(163, 161, 161)"><br> <br>Leer Menos</span></p>
-					</div>		
-					
-						
-					<!-- Swiper contenedor totoal, submenu , detalles-->
-					<div class="contenedor-swiper-tarjetas">					
-						<div class="contenedor-todo-swiper">						 	
-						   <div class="swiper-container mySwiper">
-							 <div class="swiper-wrapper">
-
-							   <div class="swiper-slide">
-								   <h5>Saludables (solo frutas) $40,000</h5>
-								   <img src="imgs/anchetas-dulces.jpg" >	
-							   </div>
-							   <div class="swiper-slide">
-								   <h5>Candy (solo dulces)$40,000</h5>
-								   <img src="imgs/ducles-licores.jpg" >	
-							   </div>
-							   <div class="swiper-slide">
-								   <h5>Mixta (salado y dulce) $40,000</h5>
-								   <img src="imgs/anchetas_saludables.png" >	
-							   </div> 
-							   <div class="swiper-slide">
-								<h5>Desayuno $40,000</h5>
-								<img src="imgs/anchetas_saludables.png" >	
-							</div> 
-							 </div>
-
-							 <div class="swiper-button-next"></div>
-							 <div class="swiper-button-prev"></div>
-							 <div class="swiper-pagination" ></div>
-						   </div>										
-					   </div>		
-					   <!-- informacion desplegable, tarjetas de inforamcion-->
-					   <div class="contenedor-tarjetas-info">							
-							   <div class="tarjeta-info about">
-								   <h4>Detalles</h4> 
-								   <p class="p-about">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								   consequat. Duis, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,							
-								   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea LIMITE.								
-								   </p>
-							   </div>
-							   <div class="tarjeta-info contenido">
-								   <h4>Contenido</h4> 						
-								   <h6>Personalizable</h6>	
-									<div class="contenido-personalizable">										
-										<h7>Tipo Bandeja:</h7>
-										<select name="select" class="variantes-producto"  >
-											<option value="1">bandeja1</option>
-											<option value="2">bandeja2</option>
-											<option value="3">bandeja3</option>
-										</select>	
-										  <h7>Descripción:</h7>	
-										  <textarea   type="descripcion" name="descripcion" rows="3" cols="10" class="descripcion-productos" name="descripcion"  placeholder="Escribe aquí tu descripción.."></textarea>									 										  
-									</div>
-							   </div>
-							   <div class="tarjeta-info orden">
-								   <h4 class="h4-orden">Orden</h4> 								 
-								   <div class="cantidad-unidades">	
-									<button class="btn-comprar">comprar</button>	
-									<span class="span-cantidad">
-										<button  class="botones-unidades disminuir-productos" >-</button>
-										<input type="text" class="cantidad-producto" value="1">
-										<button  class="botones-unidades aumentar-productos ">+</button>																															
-									</span>									
-										
-								   </div>					
-							   </div>
-					   </div>
-				   </div>	
-
-				</figure>	
-				
-	
+				-->													
 			</div>	
 						
 				
@@ -574,7 +250,7 @@
 				<a href = "contactos.html" class="margen-derecha" class="margen-derecha">Contactos</a>				
 				<a href = "https://www.facebook.com/profile.php?id=100009055449064" class="margen-derecha">Redes Sociales</a>	
 				<a href = "https://www.instagram.com/castelll0009">Instragram</a>		
-				<a style="background-color: #C907C0; border-radius: 5px; padding-left: 8px; padding-right: 8px; color: beige;"  href = "https://drive.google.com/file/d/1NDsNjMkE4laC038JCCZmbtsV9ulMIvaF/view?usp=sharing">CV-Developer</a>	
+				<a style="background-color: #013a06; border-radius: 5px; padding-left: 8px; padding-right: 8px; color: beige;"  href = "https://drive.google.com/file/d/1NDsNjMkE4laC038JCCZmbtsV9ulMIvaF/view?usp=sharing">CV-Developer</a>	
 			</nav>				
 			
 		</main>	  
@@ -583,7 +259,7 @@
 	  		Your browser does not support the audio element.
 		</audio>
 
-		<script src="js/menu.js"></script>	
+		<script src="js/menu.js"></script>			
 		<script src="js/buttom_menu.js"></script>	
 		<script src="js/jquery.js"></script>  		
 		 <!-- Swiper JS -->
