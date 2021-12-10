@@ -1,9 +1,6 @@
 //funcion  que crea  ventas de  forma ALeatoria segun un rango
-var lim_ventas = 5;
-generarVentas();
+var lim_ventas = 10;
 
-
-function generarVentas(){ 
     let cont_ventas = 0;
     //let crearVentas = true;        
     //-Registrar datos de forma automática y aleatoria para una venta simulada
@@ -38,6 +35,6 @@ function generarVentas(){
         }else{
             return;
         }                     
-    }, 1000);                    
-}
+    }, 5000);                    
+
 
