@@ -1,5 +1,5 @@
 //funcion  que crea  ventas de  forma ALeatoria segun un rango
-var lim_ventas = 10;
+var lim_ventas = 5;
 
     let cont_ventas = 0;
     //let crearVentas = true;        

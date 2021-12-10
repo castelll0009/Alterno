@@ -3,19 +3,14 @@
 
 //reemplazar por los  valores cantidad de ventas
 //consulta  cantidad de productos vendidos por id_producto
+var myChart;  
 var xValues = [];
 var yValues =  [];
-fetchProducts();
 var barColors = ["red", "green","blue","orange","brown","pink","gray","purple"];
 
-/*
-console.log(barColors);
-console.log(xValues);
-console.log(yValues);*/
-
-
 // Fetching Data Products
-function fetchProducts() {
+rotular_grafica();
+function rotular_grafica(){
   $.ajax({
     url: 'backend/graficar.php',
     type: 'GET',
@@ -24,9 +19,9 @@ function fetchProducts() {
       products.forEach(product => {         
         xValues.push(product.nombre);           
         yValues.push(product.cantidad_total);           
-      });      
-      
-      new Chart("myChart", {
+      });    
+                     
+       myChart = new Chart("myChart", {    
         type: "bar",
         data: {
           labels: xValues,
@@ -41,12 +36,20 @@ function fetchProducts() {
             display: true,
             text: "Ventas de productos  en el mes actual, en timepo real"
           }
-        }
-      });
-      //console.log(yValues);
+        }                
+      }); 
+      
+        xValues = [];
+        yValues = [];           
+                         
     }
-  });
-}
+  });  
+} 
+
+setInterval(
+  function(){    
+    rotular_grafica();
+  }, 5000);
 
 /*
 // Fetching Data Products
