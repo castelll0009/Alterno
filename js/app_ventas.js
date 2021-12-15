@@ -1,6 +1,7 @@
 $(document).ready(function() {
   // Global Settings
   var bandera_enlistar = 0;
+  let d_query = false;
 
   // Testing Jquery
   console.log('jquery is working!');
@@ -13,7 +14,6 @@ $(document).ready(function() {
   // Search by Key Type (Event)
   $('#search').keyup(function() {
     bandera_enlistar++;
-    console.log(bandera_enlistar);
     if($('#search').val()) {
       let search = $('#search').val();
       $.ajax({
@@ -38,7 +38,7 @@ $(document).ready(function() {
                       <td>${product.precio_total}</td>
                       <td>
                         <a class="btn btn-secondary">
-                          <i class="fas fa-cog"></i>
+                          <!--<i class="fas fa-cog"></i>-->
                         </a>
                         <a class="sale-delete btn btn-danger" style="color:#fff;">
                           <i class="far fa-trash-alt"></i>
@@ -54,6 +54,27 @@ $(document).ready(function() {
     else {
       fetchVentas();
       bandera_enlistar = 0;
+    }
+  });
+
+  //Type of Query Change 
+  $(document).on('click', '#query-by-date', function() {
+    if (d_query == false){
+      d_query = true;
+      template_q = `
+              <input name="search" id="search" class="form-control mr-sm-2" type="date" aria-label="Search">
+              <button id="query-by-date" type="button" class="btn btn-primary fas fa-pencil-alt"></button>
+              `
+      $('#type-query').html(template_q)
+      console.log("date query ready");
+    } else {
+      d_query = false;
+      template_q = `
+              <input name="search" id="search" class="form-control mr-sm-2" type="search" placeholder="Nombre del producto" aria-label="Search">
+              <button id="query-by-date" type="button" class="btn btn-primary fas fa-calendar"></button>
+              `
+      $('#type-query').html(template_q)
+      console.log("query ready");
     }
   });
 
@@ -75,6 +96,54 @@ $(document).ready(function() {
       }
     });
   }
+
+  // Search by Date
+  $('#busqueda').submit(e => {
+    bandera_enlistar++;
+    e.preventDefault();
+    if(d_query == true) {
+      const search = $('#search').val();
+      console.log(search);
+      $.ajax({
+        url: 'backend/venta-d-search.php',        
+        type: 'POST',
+        data: {search},
+        success: function(response) {
+          const products = JSON.parse(response);
+          let template = '';
+          products.forEach(product => {
+            template +=  `
+                    <tr saleId="${product.id}">
+                      <td>${product.id}</td>
+                      <td>
+                      <a href="#" class="product-item">
+                        ${product.nombre} 
+                      </a>
+                      </td>
+                      <td>${product.precio}</td>
+                      <td>${product.cantidad}</td>
+                      <td>${product.fecha}</td>
+                      <td>${product.precio_total}</td>
+                      <td>
+                        <a class="btn btn-secondary">
+                          <!--<i class="fas fa-cog"></i>-->
+                        </a>
+                        <a class="sale-delete btn btn-danger" style="color:#fff;">
+                          <i class="far fa-trash-alt"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  `
+          });
+          $('#sales').html(template);
+        }
+      })
+    } else {
+      let search = $('#search').val();
+      console.log(search); 
+      bandera_enlistar = 0;
+    }
+  });
 
   // Get Current Date
   function getCurrentDate() {
@@ -134,7 +203,7 @@ $(document).ready(function() {
                     <td>${product.precio_total}</td>
                     <td>
                       <a class="btn btn-secondary">
-                        <i class="fas fa-cog"></i>
+                        <!--<i class="fas fa-cog"></i>-->
                       </a>
                       <a class="sale-delete btn btn-danger" style="color:#fff;">
                         <i class="far fa-trash-alt"></i>
@@ -164,7 +233,7 @@ $(document).ready(function() {
       date: $('#date').val(),
       total: $('#total').val()
     };
-    console.log(postData);
+    //console.log(postData);
     const url = 'backend/venta-add.php';
     //console.log(postData, url);
     $.post(url, postData, (response) => {

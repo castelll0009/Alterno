@@ -5,7 +5,6 @@ let crearVentas = false;
 //-Registrar datos de forma automática y aleatoria para una venta simulada
 //(precio(tbl_producto),fecha de venta,cantidad y total)
 $('#sales-rand-on').click(function() {
-    console.log('click');
     if (crearVentas == false){
         crearVentas = true;
         document.getElementById('sales-rand-on').innerHTML = '¡Detener!';
@@ -15,7 +14,6 @@ $('#sales-rand-on').click(function() {
         document.getElementById('sales-rand-on').innerHTML = 'Iniciar Registro de Ventas Automatico';
         console.log('STOPED');
     }
-    console.log(crearVentas);
 });
 
 function createSales(){
