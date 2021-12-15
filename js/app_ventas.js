@@ -1,10 +1,11 @@
 $(document).ready(function() {
   // Global Settings
-  let edit = false;
+  let searq = false;
+  let d_query = false;
 
   // Testing Jquery
   console.log('jquery is working!');
-  fetchVentas();
+  //fetchVentas();
   fetchProducts();
   getCurrentDate();
 
@@ -12,6 +13,8 @@ $(document).ready(function() {
   $('#search').keyup(function() {
     if($('#search').val()) {
       let search = $('#search').val();
+      searq = true;
+      console.log(searq);
       $.ajax({
         url: 'backend/venta-search.php',        
         type: 'POST',
@@ -49,7 +52,26 @@ $(document).ready(function() {
     } 
     else {
       fetchVentas();
+      searq = false;
     }
+  });
+
+  $('#query-by-date').click(function() {
+    console.log('click');
+    if (d_query == false){
+        d_query = true;
+        template_q = `
+                <input name="search" id="search" class="form-control mr-sm-2" type="date" aria-label="Search">
+                `
+        $('#data-query').html(template_q)
+    } else {
+        d_query = false;
+        template_q = `
+                <input name="search" id="search" class="form-control mr-sm-2" type="search" placeholder="Nombre del producto" aria-label="Search">
+                `
+        $('#data-query').html(template_q)        
+    }
+    console.log(d_query);
   });
 
   // Fetching Products
@@ -144,7 +166,9 @@ $(document).ready(function() {
   }
 
   setInterval(function() {
-    fetchVentas();
+    if(searq == false){
+      fetchVentas();
+    }
   }, 1000);
   
   // Add New Sale

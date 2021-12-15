@@ -42,8 +42,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <form class="form-inline my-2 my-lg-0">
-              <input name="search" id="search" class="form-control mr-sm-2" type="search" placeholder="Nombre del producto" aria-label="Search">
-              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+              
+              <div id="type-query" class="btn-group show" role="group">
+                <input name="search" id="search" class="form-control mr-sm-2" type="search" placeholder="Nombre del producto" aria-label="Search">
+              </div>
+              <div>
+                <button id="query-by-date" type="button" class="btn btn-primary fas fa-calendar"></button>
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+              </div>
+
             </form>
         </div>
       </div>
