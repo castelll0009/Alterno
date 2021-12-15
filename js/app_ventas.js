@@ -1,20 +1,21 @@
 $(document).ready(function() {
   // Global Settings
-  let searq = false;
-  let d_query = false;
+  var bandera_enlistar = 0;
 
   // Testing Jquery
   console.log('jquery is working!');
-  //fetchVentas();
+  if(bandera_enlistar < 1){
+    fetchVentas();
+  }
   fetchProducts();
   getCurrentDate();
 
   // Search by Key Type (Event)
   $('#search').keyup(function() {
+    bandera_enlistar++;
+    console.log(bandera_enlistar);
     if($('#search').val()) {
       let search = $('#search').val();
-      searq = true;
-      console.log(searq);
       $.ajax({
         url: 'backend/venta-search.php',        
         type: 'POST',
@@ -52,26 +53,8 @@ $(document).ready(function() {
     } 
     else {
       fetchVentas();
-      searq = false;
+      bandera_enlistar = 0;
     }
-  });
-
-  $('#query-by-date').click(function() {
-    console.log('click');
-    if (d_query == false){
-        d_query = true;
-        template_q = `
-                <input name="search" id="search" class="form-control mr-sm-2" type="date" aria-label="Search">
-                `
-        $('#data-query').html(template_q)
-    } else {
-        d_query = false;
-        template_q = `
-                <input name="search" id="search" class="form-control mr-sm-2" type="search" placeholder="Nombre del producto" aria-label="Search">
-                `
-        $('#data-query').html(template_q)        
-    }
-    console.log(d_query);
   });
 
   // Fetching Products
@@ -164,12 +147,13 @@ $(document).ready(function() {
       }
     });
   }
-
-  setInterval(function() {
-    if(searq == false){
-      fetchVentas();
-    }
-  }, 1000);
+  
+  /*
+  if(bandera_enlistar < 1){
+    //setInterval(function() {
+        fetchVentas();
+    //}, 1000);
+  }*/
   
   // Add New Sale
   $('#sale-form').submit(e => {
