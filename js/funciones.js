@@ -46,7 +46,7 @@ setInterval(function(){
     if (crearVentas == true) {
         createSales();
     }
-}, 6000);
+}, 4000);
 
 $(document).on('click', '#danger-delete', function() {
     if(confirm('¿Seguro que quieres eliminar TODOS los registros?')) {

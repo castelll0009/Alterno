@@ -7,6 +7,7 @@ if (d_query == false){
     d_query = true;
     template_q = `
             <input name="search" id="search" class="form-control mr-sm-2" type="date" aria-label="Search">
+            <button id="plus-d-query" type="button" class="btn btn-primary fas fa-plus-square"></button>
             <button id="query-by-date" type="button" class="btn btn-primary fas fa-calendar"></button>
             `
     newfunction();

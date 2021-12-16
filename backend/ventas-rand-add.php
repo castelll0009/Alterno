@@ -21,7 +21,11 @@
         }
         //$date = $year . "-" . $month . "-" . $day;
         $date = "2021-" . sprintf('%02d', $month) . "-" . sprintf('%02d', $day);*/
-        $date = date("Y-m-d");
+        
+        $day = rand(1,31);
+        $date = "2021-12-" . sprintf('%02d', $day);
+
+        //$date = date("Y-m-d");
 
         //precio total , lo calculamos usando la llave forane Id_prodcucto_venta 
         $precio_total = $cantidad * $precio;

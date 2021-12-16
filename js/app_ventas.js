@@ -14,6 +14,7 @@ $(document).ready(function() {
   // Search by Key Type (Event)
   $('#search').keyup(function() {
     bandera_enlistar++;
+    console.log(bandera_enlistar);
     if($('#search').val()) {
       let search = $('#search').val();
       $.ajax({
@@ -37,9 +38,9 @@ $(document).ready(function() {
                       <td>${product.fecha}</td>
                       <td>${product.precio_total}</td>
                       <td>
-                        <a class="btn btn-secondary">
-                          <!--<i class="fas fa-cog"></i>-->
-                        </a>
+                        <!--<a class="btn btn-secondary">
+                          <i class="fas fa-cog"></i>
+                        </a>-->
                         <a class="sale-delete btn btn-danger" style="color:#fff;">
                           <i class="far fa-trash-alt"></i>
                         </a>
@@ -57,12 +58,13 @@ $(document).ready(function() {
     }
   });
 
-  //Type of Query Change 
+  // Type of Query Change 
   $(document).on('click', '#query-by-date', function() {
     if (d_query == false){
       d_query = true;
       template_q = `
               <input name="search" id="search" class="form-control mr-sm-2" type="date" aria-label="Search">
+              <button id="plus-d-query" type="button" class="btn btn-secondary fas fa-plus-square"></button>
               <button id="query-by-date" type="button" class="btn btn-primary fas fa-pencil-alt"></button>
               `
       $('#type-query').html(template_q)
@@ -76,6 +78,21 @@ $(document).ready(function() {
       $('#type-query').html(template_q)
       console.log("query ready");
     }
+  });
+  // Plus Range Date Query
+  $(document).on('click', '#plus-d-query', function() {
+    template_q = `
+            <div style="padding-top:37px; padding-right:5px;">
+              <a style="color: #fff">Rango {</a>
+            </div>
+            <div class="card">
+              <input name="search" id="search" class="form-control" type="date" aria-label="Search">
+              <input name="search" id="search2" class="form-control" type="date" aria-label="Search">
+            </div>
+            <button id="query-by-date" type="button" class="btn btn-primary fas fa-pencil-alt"></button>
+            `
+    $('#type-query').html(template_q)
+    console.log("date query ready");
   });
 
   // Fetching Products
@@ -102,13 +119,24 @@ $(document).ready(function() {
     bandera_enlistar++;
     e.preventDefault();
     if(d_query == true) {
-      const search = $('#search').val();
-      console.log(search);
+      var data_query = {};
+      if($('#search2').val()){
+        data_query = {
+          s1: $('#search').val(),
+          s2: $('#search2').val(),
+        };
+      } else {
+        data_query = {
+          s1: $('#search').val(),
+        };
+      }
+      console.log(data_query);
       $.ajax({
         url: 'backend/venta-d-search.php',        
         type: 'POST',
-        data: {search},
+        data: data_query,
         success: function(response) {
+          console.log(response);
           const products = JSON.parse(response);
           let template = '';
           products.forEach(product => {
@@ -125,9 +153,9 @@ $(document).ready(function() {
                       <td>${product.fecha}</td>
                       <td>${product.precio_total}</td>
                       <td>
-                        <a class="btn btn-secondary">
-                          <!--<i class="fas fa-cog"></i>-->
-                        </a>
+                        <!--<a class="btn btn-secondary">
+                          <i class="fas fa-cog"></i>
+                        </a>-->
                         <a class="sale-delete btn btn-danger" style="color:#fff;">
                           <i class="far fa-trash-alt"></i>
                         </a>
@@ -202,9 +230,9 @@ $(document).ready(function() {
                     <td>${product.fecha}</td>
                     <td>${product.precio_total}</td>
                     <td>
-                      <a class="btn btn-secondary">
-                        <!--<i class="fas fa-cog"></i>-->
-                      </a>
+                      <!--<a class="btn btn-secondary">
+                        <i class="fas fa-cog"></i>
+                      </a>-->
                       <a class="sale-delete btn btn-danger" style="color:#fff;">
                         <i class="far fa-trash-alt"></i>
                       </a>
@@ -217,12 +245,18 @@ $(document).ready(function() {
     });
   }
   
-  /*
-  if(bandera_enlistar < 1){
-    //setInterval(function() {
-        fetchVentas();
-    //}, 1000);
-  }*/
+  setInterval(function() {
+    if(bandera_enlistar < 1){
+      console.log(bandera_enlistar);
+      fetchVentas();
+    }
+  }, 3000);
+
+  // Refresh Button
+  $(document).on('click', '#refresh', function() {
+    fetchVentas();
+    bandera_enlistar = 0;
+  });
   
   // Add New Sale
   $('#sale-form').submit(e => {
