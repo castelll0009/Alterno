@@ -2,7 +2,7 @@
 
   include('database.php');
 
-  $query = "SELECT * from tbl_producto";
+  $query = "SELECT * from tbl_productos";
   $result = mysqli_query($connection, $query);
 
   /* si no hay  encuentra resultados se cierra la conexion*/

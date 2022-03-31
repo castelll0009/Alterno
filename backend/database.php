@@ -5,8 +5,9 @@
         /* base de datos Clever cloud
         'blzwwwafrtnoulyompah-mysql.services.clever-cloud.com', 'uflmxyisjbdu7w7l', 'k5ulb9EJWmdqIgYLjNHF', 'blzwwwafrtnoulyompah'
         */
+         '127.0.0.0', 'root','','alterno-db'
         //conexion Base de datos hosgator
-        '162.241.61.135', 'mojitosc_castelll0009','Castillo1997177-','mojitosc_mojitos-db'
+       // '162.241.61.135', 'mojitosc_castelll0009','Castillo1997177-','mojitosc_mojitos-db'
     );
     
     /*

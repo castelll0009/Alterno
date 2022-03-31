@@ -9,7 +9,7 @@
         $uses = $_POST['uses'];
         $recipes = $_POST['recipes'];
 
-        $query = "INSERT into tbl_producto(nombre, descripcion, precio, propiedades, usos, recetas) VALUES ('$name','$description','$price','$properties','$uses','$recipes')";
+        $query = "INSERT into tbl_productos(nombre, descripcion, precio, propiedades, usos, recetas) VALUES ('$name','$description','$price','$properties','$uses','$recipes')";
         
         $result = mysqli_query($connection, $query);
         if(!$result) {
